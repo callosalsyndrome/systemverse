@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://h5t5m8jr3i0m"]
+
+[ext_resource type="Script" uid="uid://dbxkrnoyyk1ed" path="res://scripts/pause_scene.gd" id="1_mfaka"]
+
+[node name="PauseScene" type="Node2D"]
+script = ExtResource("1_mfaka")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 650.0
+color = Color(0.08235294, 0.078431375, 0.14509805, 0.22745098)
+
+[node name="resume_button" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 273.0
+offset_right = 304.0
+offset_bottom = 304.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Возобновить игру"
+
+[node name="exit_to_menu_button" type="Button" parent="."]
+offset_left = 129.0
+offset_top = 330.0
+offset_right = 305.0
+offset_bottom = 361.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Вернуться в меню"
+
+[connection signal="pressed" from="resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="exit_to_menu_button" to="." method="_on_exit_to_menu_button_pressed"]

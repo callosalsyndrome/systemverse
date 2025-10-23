@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://mm8et44om561"]
+
+[ext_resource type="Script" uid="uid://33u806onwnwl" path="res://scripts/player.gd" id="1_v6fml"]
+[ext_resource type="Texture2D" uid="uid://b0w20amcg6ygd" path="res://icon.svg" id="2_3li8b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdl7e"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"diagonal_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"diagonal_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"horisontal_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"horisontal_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"vertical_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3li8b")
+}],
+"loop": true,
+"name": &"vertical_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu4a1"]
+radius = 62.0
+height = 124.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v6fml")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mdl7e")
+animation = &"vertical_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qu4a1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
