@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwum1jch0cjnj"]
+[gd_scene load_steps=3 format=3 uid="uid://cwum1jch0cjnj"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_mkkox"]
+[ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="2_b2a1o"]
 
 [node name="GameplayScene" type="Node2D"]
 script = ExtResource("1_mkkox")
@@ -16,3 +17,6 @@ offset_top = 321.0
 offset_right = 692.0
 offset_bottom = 344.0
 text = "тут будет игровая сцена"
+
+[node name="Player" parent="." instance=ExtResource("2_b2a1o")]
+position = Vector2(373, 359)
