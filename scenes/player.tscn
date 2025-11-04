@@ -47,6 +47,7 @@ height = 124.0
 size = Vector2(138, 135)
 
 [node name="Player" type="CharacterBody2D"]
+floor_block_on_wall = false
 script = ExtResource("1_v6fml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

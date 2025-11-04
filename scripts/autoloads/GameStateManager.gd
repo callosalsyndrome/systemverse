@@ -21,8 +21,8 @@ signal battle_resumed()
 signal game_over()
 signal revived()
 
-func _ready():
-	_connect_to_menu()
+#func _ready():
+	#_connect_to_menu() #из-за него не запускалось передвижение, потом раскомментировать
 
 func _connect_to_menu():
 	print("GSM: Пытаемся найти меню...")
