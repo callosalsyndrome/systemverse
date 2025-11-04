@@ -12,8 +12,8 @@ config_version=5
 
 config/name="Systemverse"
 run/main_scene="uid://dgd8etrrn4sm3"
-config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/bg_color=Color(0.07963928, 0.15972418, 0.13664699, 1)
+config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.0796393, 0.159724, 0.136647, 1)
 boot_splash/show_image=false
 boot_splash/image="uid://d1lol2t86votl"
 config/icon="uid://cxvyvsihlybth"
