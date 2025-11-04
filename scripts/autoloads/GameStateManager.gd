@@ -24,7 +24,7 @@ signal savings_slots
 #signal revived()
 
 func _ready():
-	_connect_to_menu()
+	_connect_to_menu() 
 
 func _connect_to_menu():
 	print("GSM: Пытаемся найти меню...")
