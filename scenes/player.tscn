@@ -59,6 +59,7 @@ shape = SubResource("CapsuleShape2D_qu4a1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 6
+scale = Vector2(0.011867742, 0.073025554)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 

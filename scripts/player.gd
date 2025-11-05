@@ -10,7 +10,7 @@ signal player_initiated_cutscene()
 signal player_initiated_combat()
 signal checkpoint_reached()
 
-@export var speed: int = 800 #200
+@export var speed: int = 200 #200
 @export var interaction_area: Area2D  #пока не надо
 
 func _physics_process(_delta):
