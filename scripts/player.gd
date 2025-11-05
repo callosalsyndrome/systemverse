@@ -10,7 +10,7 @@ signal player_initiated_cutscene()
 signal player_initiated_combat()
 signal checkpoint_reached()
 
-@export var speed: int = 200 #200
+@export var speed: int = 200
 @export var interaction_area: Area2D  #пока не надо
 
 func _physics_process(_delta):
@@ -18,13 +18,34 @@ func _physics_process(_delta):
 	
 	if Input.is_action_pressed("move_right"):
 		input_direction.x += 1
+		$AnimatedSprite2D.animation = "horisonral_right"
 	if Input.is_action_pressed("move_left"):
 		input_direction.x -= 1
+		$AnimatedSprite2D.animation = "horisonral_left"
 	
 	if Input.is_action_pressed("move_down"):
 		input_direction.y += 1
+		$AnimatedSprite2D.animation = "vertical_down"
 	if Input.is_action_pressed("move_up"):
 		input_direction.y -= 1
+		$AnimatedSprite2D.animation = "vertical_up"
+	
+	if Input.is_action_pressed("move_down") and Input.is_action_pressed("move_right"):
+		$AnimatedSprite2D.animation = "diagonal_down"
+		$AnimatedSprite2D.flip_h = false
+		
+	if Input.is_action_pressed("move_down") and Input.is_action_pressed("move_left"):
+		$AnimatedSprite2D.animation = "diagonal_down"
+		$AnimatedSprite2D.flip_h = true
+	
+	#на будущее
+	#if Input.is_action_pressed("move_up") and Input.is_action_pressed("move_right"):
+		#$AnimatedSprite2D.animation = "diagonal_up"
+		#$AnimatedSprite2D.flip_h = false 
+		#
+	#if Input.is_action_pressed("move_up") and Input.is_action_pressed("move_left"):
+		#$AnimatedSprite2D.animation = "diagonal_up"
+		#$AnimatedSprite2D.flip_h = true
 	
 	#нормализация для диагоналей, применение скорости
 	if input_direction != Vector2.ZERO:

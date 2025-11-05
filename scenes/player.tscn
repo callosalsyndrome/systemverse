@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://mm8et44om561"]
+[gd_scene load_steps=8 format=3 uid="uid://mm8et44om561"]
 
 [ext_resource type="Script" uid="uid://33u806onwnwl" path="res://scripts/player.gd" id="1_v6fml"]
-[ext_resource type="Texture2D" uid="uid://b0w20amcg6ygd" path="res://icon.svg" id="2_3li8b"]
+[ext_resource type="Texture2D" uid="uid://bwhuj5xefftmd" path="res://assets/sprites/diagonal down.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://c3c35cvicd2jf" path="res://assets/sprites/vertical down.png" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://siseum8ji3q" path="res://assets/sprites/vertical up.png" id="4_tuyoq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdl7e"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dqkch")
+}],
 "loop": true,
 "name": &"diagonal_down",
 "speed": 5.0
@@ -25,14 +30,17 @@ animations = [{
 "name": &"horisontal_right",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qlg0r")
+}],
 "loop": true,
 "name": &"vertical_down",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_3li8b")
+"texture": ExtResource("4_tuyoq")
 }],
 "loop": true,
 "name": &"vertical_up",
@@ -40,8 +48,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu4a1"]
-radius = 62.0
-height = 124.0
+radius = 31.0
+height = 148.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(138, 135)
@@ -51,6 +59,7 @@ floor_block_on_wall = false
 script = ExtResource("1_v6fml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_mdl7e")
 animation = &"vertical_up"
 
@@ -59,11 +68,12 @@ shape = SubResource("CapsuleShape2D_qu4a1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 6
-scale = Vector2(0.011867742, 0.073025554)
+scale = Vector2(0.0118677, 0.0730256)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, -1.5)
