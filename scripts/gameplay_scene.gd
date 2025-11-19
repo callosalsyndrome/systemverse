@@ -1,19 +1,27 @@
 extends Node2D
 
-# я еще не уверена как будет реализовываться геймплей. 
-# там определенно будет сцена игрока + tilemap-ы локаций
-# в общем пока достаточно релизовать открытие сцены через сигналы + движение игрока в ней
-
 signal game_started()
+signal world_changed(world_name)
 
 func _ready():
 	print("GP: Я - ", name)
-	# Геймплейная сцена добавляет СЕБЯ в группу
 	add_to_group("gameplay_scene")  
 	_on_game_started()
 	
 func _on_game_started():
-	print("GP: Game world started!")
-	print("GP: Эмитим (выполняем) сигнал game_started")
 	game_started.emit()
-	
+
+var entered = false #Находимся ли мы в зоне
+
+@export var world_name: String = "gameplay_scene" 
+
+func _process(_delta):
+	if entered == true: 
+		if Input.is_action_just_pressed("interact"):
+			world_name = name
+			world_changed.emit(world_name) 
+
+func _on_interactable_object_player_entered_interaction_zone(_object_name: Variant) -> void:
+	entered = true
+func _on_interactable_object_player_exited_interaction_zone(_object_name: Variant) -> void:
+	entered = false

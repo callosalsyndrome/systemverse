@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://dv0ua4ff1do7g"]
+[gd_scene load_steps=11 format=4 uid="uid://dv0ua4ff1do7g"]
 
+[ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_cnlya"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="1_embir"]
 [ext_resource type="Texture2D" uid="uid://h6kxmot0wwg7" path="res://assets/sprites/tiles/спрайты2.png" id="2_ytmxs"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="3_yroxo"]
@@ -301,6 +302,7 @@ sources/1 = SubResource("TileSetAtlasSource_yroxo")
 sources/2 = SubResource("TileSetAtlasSource_s7xss")
 
 [node name="LabGameplayScene" type="Node2D"]
+script = ExtResource("1_cnlya")
 
 [node name="LabTileMap_bottom" type="TileMapLayer" parent="."]
 y_sort_enabled = true
@@ -340,3 +342,6 @@ position = Vector2(335, 24)
 
 [node name="InteractableObject" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(73, -22)
+
+[connection signal="player_entered_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
+[connection signal="player_exited_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]
