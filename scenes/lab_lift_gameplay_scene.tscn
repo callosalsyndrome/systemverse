@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://ctbktohunshj"]
+[gd_scene load_steps=11 format=4 uid="uid://ctbktohunshj"]
 
+[ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_8urxs"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="1_y3dlq"]
 [ext_resource type="Texture2D" uid="uid://h6kxmot0wwg7" path="res://assets/sprites/tiles/спрайты2.png" id="2_3bgeo"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="3_3bgeo"]
@@ -416,7 +417,8 @@ sources/0 = SubResource("TileSetAtlasSource_ytmxs")
 sources/1 = SubResource("TileSetAtlasSource_yroxo")
 sources/2 = SubResource("TileSetAtlasSource_s7xss")
 
-[node name="LabGameplayScene" type="Node2D"]
+[node name="LabLiftGameplayScene" type="Node2D"]
+script = ExtResource("1_8urxs")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

@@ -17,16 +17,21 @@ signal exit_button_pressed()
 
 func _ready():
 	add_to_group("menu_scene")
+	StartButton.pressed.connect(_on_start_button_pressed)
+	ExitButton.pressed.connect(_on_exit_button_pressed)
 
 func _on_start_button_pressed() -> void:
+	print("Начать")
+	var connections = get_signal_connection_list("start_button_pressed")
+	print("Всего подключений к сигналу 'pressed': ", connections.size())
+	for connection in connections:
+		print("Подключение: ", connection)
 	start_button_pressed.emit()
 
 func _on_exit_button_pressed() -> void:
 	exit_button_pressed.emit()
 	get_tree().quit() 
-	#get_tree() - получает корневой объект сцены (SceneTree)
-	#.quit() - метод для корректного завершения работы приложения
 	
-func _exit_tree():
-	StartButton.pressed.disconnect(_on_start_button_pressed)
-	ExitButton.pressed.disconnect(_on_exit_button_pressed)
+#func _exit_tree():
+	#StartButton.pressed.disconnect(_on_start_button_pressed)
+	#ExitButton.pressed.disconnect(_on_exit_button_pressed)

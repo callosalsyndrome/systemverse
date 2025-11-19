@@ -132,3 +132,6 @@ script = ExtResource("4_27dq3")
 z_index = 2
 position = Vector2(-532, 1009.00006)
 scale = Vector2(0.4375002, 0.4375002)
+
+[connection signal="player_entered_interaction_zone" from="InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
+[connection signal="player_exited_interaction_zone" from="InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]
