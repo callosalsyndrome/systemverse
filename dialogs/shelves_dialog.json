@@ -1,0 +1,19 @@
+{
+	"item_id": "shelves",
+	"item_name": "Полки",
+	"portrait": "res://assets/sprites/new character sprites/down.png",
+	"lines": [
+		{
+			"speaker": "я",
+			"text": "Это полки"
+		},
+		{
+			"speaker": "я",
+			"text": "На них что-то лежит"
+		},
+		{
+			"speaker": "я",
+			"text": "Пока, полки"
+		}
+	]
+}

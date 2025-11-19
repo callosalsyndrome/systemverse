@@ -1,0 +1,18 @@
+{
+	"item_id": "computer",
+	"portrait": "res://assets/sprites/new character sprites/down.png",
+	"lines": [
+		{
+			"speaker": "я",
+			"text": "Это компьютер"
+		},
+		{
+			"speaker": "я",
+			"text": "Он что-что делает"
+		},
+		{
+			"speaker": "я",
+			"text": "Пока, компьютер"
+		}
+	]
+}

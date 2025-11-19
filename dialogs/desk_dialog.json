@@ -1,0 +1,18 @@
+{
+	"item_id": "desk",
+	"portrait": "res://assets/sprites/new character sprites/down.png",
+	"lines": [
+		{
+			"speaker": "я",
+			"text": "Это доска"
+		},
+		{
+			"speaker": "я",
+			"text": "На ней заметки"
+		},
+		{
+			"speaker": "я",
+			"text": "Пока, доска"
+		}
+	]
+}

@@ -8,6 +8,8 @@ signal interaction_started(object)
 
 @onready var area_2d = $Area2D
 
+@export var dialog_id: String = ""
+
 func _ready():
 	$AnimatedSprite2D.play("glow")
 	$AnimatedSprite2D/ColorRect.hide()
@@ -17,7 +19,9 @@ func _ready():
 	
 func _input(event):
 	if is_player_in_zone() and event.is_action_pressed("interact"):
-		handle_interaction()
+		if not DialogManager.is_dialog_active:
+			print("кнопка interact нажата")
+			handle_interaction()
 	
 func handle_interaction():
 	print("Взаимодействие с объектом:", name)
@@ -26,8 +30,15 @@ func handle_interaction():
 	
 func perform_interaction(): #переопределяется для дочерних классов
 	print("Взаимодействие с ", name)
+	
+	if dialog_id != "":
+		print("🔊 Пытаемся запустить диалог: ", dialog_id)
+		DialogManager.start_dialog(dialog_id)
+	else:
+		print("🔇 У объекта нет dialog_id")
+	
 	interaction_triggered.emit()
-
+	
 func _on_body_entered(body: Node):
 	# Проверяем, что вошел игрок (по имени или группе)
 	if body.is_in_group("player") or body.name == "Player":

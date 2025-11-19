@@ -1,0 +1,18 @@
+{
+	"item_id": "generator",
+	"portrait": "res://assets/sprites/new character sprites/down.png",
+	"lines": [
+		{
+			"speaker": "я",
+			"text": "Это что-то"
+		},
+		{
+			"speaker": "я",
+			"text": "Он что-что делает"
+		},
+		{
+			"speaker": "я",
+			"text": "Пока, что-то"
+		}
+	]
+}
