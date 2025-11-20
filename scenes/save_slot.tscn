@@ -31,3 +31,11 @@ vertical_alignment = 1
 [node name="char_image" type="Sprite2D" parent="."]
 position = Vector2(142, 177)
 texture = ExtResource("2_vl6pn")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 10.0
+offset_right = 267.0
+offset_bottom = 51.0
+text = "Удалить"
