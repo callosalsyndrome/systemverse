@@ -2,15 +2,27 @@
 
 [ext_resource type="Script" uid="uid://dbxkrnoyyk1ed" path="res://scripts/pause_scene.gd" id="1_mfaka"]
 
-[node name="PauseScene" type="Node2D"]
+[node name="PauseScene" type="CanvasLayer"]
+layer = 10
+follow_viewport_enabled = true
 script = ExtResource("1_mfaka")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 650.0
 color = Color(0.08235294, 0.078431375, 0.14509805, 0.22745098)
 
-[node name="resume_button" type="Button" parent="."]
+[node name="resume_button" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 273.0
 offset_right = 304.0
@@ -19,7 +31,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Возобновить игру"
 
-[node name="exit_to_menu_button" type="Button" parent="."]
+[node name="exit_to_menu_button" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 129.0
 offset_top = 330.0
 offset_right = 305.0
@@ -28,5 +41,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Вернуться в меню"
 
-[connection signal="pressed" from="resume_button" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="exit_to_menu_button" to="." method="_on_exit_to_menu_button_pressed"]
+[connection signal="pressed" from="Control/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Control/exit_to_menu_button" to="." method="_on_exit_to_menu_button_pressed"]
