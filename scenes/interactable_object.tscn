@@ -61,7 +61,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gknyc"]
-radius = 30.0
+radius = 86.00581
 
 [sub_resource type="Gradient" id="Gradient_1cvqn"]
 interpolation_mode = 2

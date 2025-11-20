@@ -1,41 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd0fdkfb25rtn"]
+[gd_scene load_steps=6 format=3 uid="uid://bd0fdkfb25rtn"]
 
 [ext_resource type="Script" uid="uid://cs7okxk8xw8bu" path="res://scripts/save_slot.gd" id="1_5xvxf"]
-[ext_resource type="Texture2D" uid="uid://b0w20amcg6ygd" path="res://icon.svg" id="2_vl6pn"]
+[ext_resource type="Texture2D" uid="uid://brnnlx2gh5vtf" path="res://assets/sprites/new character sprites/down.png" id="2_332xg"]
+[ext_resource type="Texture2D" uid="uid://b3kx0lq0cmks" path="res://assets/sprites/save_slot.png" id="3_332xg"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_2uv05"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_332xg"]
 
 [node name="load_game_button" type="Button"]
 offset_right = 275.0
-offset_bottom = 431.0
+offset_bottom = 466.0
+icon = SubResource("ImageTexture_2uv05")
 script = ExtResource("1_5xvxf")
 
 [node name="slot_number_label" type="Label" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = 69.0
 offset_top = 329.0
 offset_right = 213.0
 offset_bottom = 352.0
+theme_override_colors/font_color = Color(0.66, 0, 0, 1)
 text = "СЛОТ 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="percent_of_complete_label" type="Label" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 32.0
-offset_top = 367.0
-offset_right = 252.0
-offset_bottom = 390.0
+offset_left = 28.0
+offset_top = 364.0
+offset_right = 248.0
+offset_bottom = 387.0
+theme_override_colors/font_color = Color(0.74, 0, 0, 1)
 text = "процент прохождения - 0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="char_image" type="Sprite2D" parent="."]
-position = Vector2(142, 177)
-texture = ExtResource("2_vl6pn")
+z_index = 1
+position = Vector2(140, 195.99998)
+scale = Vector2(1.87, 1.87)
+texture = ExtResource("2_332xg")
 
-[node name="Button" type="Button" parent="."]
+[node name="DeleteButton" type="Button" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 128.0
-offset_top = 10.0
-offset_right = 267.0
-offset_bottom = 51.0
-text = "Удалить"
+offset_left = 230.0
+offset_top = 8.0
+offset_right = 255.0
+offset_bottom = 31.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_332xg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_332xg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_332xg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_332xg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_332xg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(136.5, 234.5)
+scale = Vector2(1.084, 1.0813954)
+texture = ExtResource("3_332xg")

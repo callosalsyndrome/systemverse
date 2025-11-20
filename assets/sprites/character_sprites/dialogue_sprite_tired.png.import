@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxus3ck0810fw"
-path="res://.godot/imported/down_step_left.png-5eb1751dc72e6ff793783ab32b0cfe0d.ctex"
+uid="uid://cwh385u3l7vs1"
+path="res://.godot/imported/dialogue_sprite_tired.png-b4d0d6357305f55a5fffb363adb1ab57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/new character sprites/down_step_left.png"
-dest_files=["res://.godot/imported/down_step_left.png-5eb1751dc72e6ff793783ab32b0cfe0d.ctex"]
+source_file="res://assets/sprites/character_sprites/dialogue_sprite_tired.png"
+dest_files=["res://.godot/imported/dialogue_sprite_tired.png-b4d0d6357305f55a5fffb363adb1ab57.ctex"]
 
 [params]
 
