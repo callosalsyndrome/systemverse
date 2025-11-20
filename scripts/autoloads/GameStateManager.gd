@@ -23,9 +23,33 @@ signal returning_to_main_menu()
 #signal game_over()
 #signal revived()
 
+var position
+var rotation
+var count_scene
+
+var config
+var path_to_save_file := "user://gamesave.cfg"
+var section_game := "slot1"
+
 func _ready():
+	#load_game()
 	_connect_to_menu() 
 
+#func save_game():
+	#config.set_value(section_game, "position_player", player.position)
+	#config.set_value(section_game, "rotation_player", player.rotation)
+	#config.set_value(section_game, "count_scene", 1)
+	#config.save(path_to_save_file)
+	
+
+# Загрузка данных
+func load_game():
+	config = ConfigFile.new()
+	config.load(path_to_save_file)
+	position = config.get_value(section_game, "position_player", Vector2.ZERO)
+	rotation = config.get_value(section_game, "rotation_player", 0.0)
+	count_scene = config.get_value(section_game, "count_scene", 0)
+		
 func _creating_menu_scene():
 	print("Создано меню")
 	var menu_scene = preload("res://scenes/menu_scene.tscn") 
@@ -98,7 +122,7 @@ func _connect_to_gameplay():
 		print("GSM: нет сцены или нет сигнала")
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and get_tree().current_scene.name != "SavingsScene" and get_tree().current_scene.name != "Menu":
 		if get_tree().paused:
 			game_resumed.connect(_on_resume_button_pressed)
 			game_resumed.emit() 
@@ -112,8 +136,7 @@ func _creating_pause_scene():
 	print("GSM: Создаем сцену паузы")
 	var pause_scene = load("res://scenes/pause_scene.tscn").instantiate()
 	return pause_scene
-	
-	
+
 func _connect_to_pause_scene():
 	print("GSM: Пытаемся найти сцену паузы...")
 	get_tree().paused = true

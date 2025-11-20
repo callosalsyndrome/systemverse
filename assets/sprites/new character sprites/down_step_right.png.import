@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://vctnwshk8qbm"
+=======
+uid="uid://cxb6jnwo21ic5"
+>>>>>>> b15369e24a02b281daf7cbaf27a7d3db312743d2
 path="res://.godot/imported/down_step_right.png-8e3d80e650c738fa9053241bfdfd4f99.ctex"
 metadata={
 "vram_texture": false
