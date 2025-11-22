@@ -9,8 +9,11 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_332xg"]
 
 [node name="load_game_button" type="Button"]
-offset_right = 275.0
-offset_bottom = 466.0
+anchors_preset = -1
+anchor_right = 0.23900001
+anchor_bottom = 0.71900004
+offset_right = -0.32800293
+offset_bottom = 5.087982
 icon = SubResource("ImageTexture_2uv05")
 script = ExtResource("1_5xvxf")
 

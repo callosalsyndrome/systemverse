@@ -30,6 +30,7 @@ offset_right = 1054.0
 offset_bottom = 537.0
 
 [node name="deleting_confirm" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="deleting_confirm"]
 z_index = 2
