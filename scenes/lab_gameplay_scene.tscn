@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dv0ua4ff1do7g"]
+[gd_scene load_steps=11 format=4 uid="uid://bwurxgdws211c"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_cnlya"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="1_embir"]
@@ -70,7 +70,7 @@ texture_region_size = Vector2i(64, 64)
 9:0/size_in_atlas = Vector2i(9, 6)
 9:0/0 = 0
 9:0/0/z_index = 2
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-146.16486, -3.7565765, -146.16486, 64.544754, -110.64816, 93.91435, -72.399414, 91.1823, 1.3660278, 126.69899, -0.6830139, 147.87239, 53.95807, 184.0721, 139.33475, 164.26472, 168.70432, 132.1631, 288.23166, 189.53621, 289.5977, -192.95128, -253.39795, -195.68333, -253.39795, -101.42749, -268.42426, -83.66914, -248.61685, -54.29956)
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-146.165, -3.75658, -146.165, 64.5448, -110.648, 93.9144, -72.3994, 91.1823, 1.36603, 126.699, -0.683014, 147.872, 53.9581, 184.072, 139.335, 164.265, 168.704, 132.163, 288.232, 189.536, 289.598, -192.951, -253.398, -195.683, -253.398, -101.427, -268.424, -83.6691, -248.617, -54.2996)
 9:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mvhas")
 4:2/0 = 0
 4:2/0/texture_origin = Vector2i(0, -16)
@@ -148,11 +148,11 @@ texture_region_size = Vector2i(32, 16)
 0:16/size_in_atlas = Vector2i(4, 9)
 0:16/0 = 0
 0:16/0/z_index = 4
-0:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.895935, 25.424637, -63.678253, 56.214127, -33.821777, 69.74284, 19.826569, 41.752396, 9.096893, 20.759567)
+0:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.8959, 25.4246, -63.6783, 56.2141, -33.8218, 69.7428, 19.8266, 41.7524, 9.09689, 20.7596)
 4:16/size_in_atlas = Vector2i(4, 9)
 4:16/0 = 0
 4:16/0/z_index = 4
-4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(11.895935, 25.424637, 63.678253, 56.214127, 33.821777, 69.74284, -19.826569, 41.752396, -9.096893, 20.759567)
+4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(11.8959, 25.4246, 63.6783, 56.2141, 33.8218, 69.7428, -19.8266, 41.7524, -9.09689, 20.7596)
 0:34/size_in_atlas = Vector2i(2, 3)
 0:34/0 = 0
 0:34/0/texture_origin = Vector2i(0, 8)
@@ -175,32 +175,32 @@ texture_region_size = Vector2i(32, 16)
 30:31/0 = 0
 30:31/0/texture_origin = Vector2i(0, 32)
 30:31/0/z_index = 4
-30:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40.352875, -26.824173, -66.01077, -14.694977, -4.4318237, 18.427032, 22.914368, 4.542816, 5.3648376, -9.096893)
+30:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40.3529, -26.8242, -66.0108, -14.695, -4.43182, 18.427, 22.9144, 4.54282, 5.36484, -9.09689)
 26:31/size_in_atlas = Vector2i(4, 9)
 26:31/0 = 0
 26:31/0/texture_origin = Vector2i(0, 32)
 26:31/0/z_index = 5
-26:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(40.352875, -26.824173, 66.01077, -14.694977, 4.4318237, 18.427032, -22.914368, 4.542816, -5.3648376, -9.096893)
+26:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(40.3529, -26.8242, 66.0108, -14.695, 4.43182, 18.427, -22.9144, 4.54282, -5.36484, -9.09689)
 21:32/size_in_atlas = Vector2i(5, 8)
 21:32/0 = 0
 21:32/0/texture_origin = Vector2i(-48, 48)
 21:32/0/z_index = 4
-21:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(129.68271, -15.453598, 94.95196, 1.4338379, 62.77025, -15.772224, 0, 16, -32, 0, 63.407516, -47.31667)
+21:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(129.683, -15.4536, 94.952, 1.43384, 62.7702, -15.7722, 0, 16, -32, 0, 63.4075, -47.3167)
 16:32/size_in_atlas = Vector2i(5, 8)
 16:32/0 = 0
 16:32/0/texture_origin = Vector2i(48, 48)
 16:32/0/z_index = 4
-16:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-129.68271, -15.453598, -94.95196, 1.4338379, -62.77025, -15.772224, 0, 16, 32, 0, -63.407516, -47.31667)
+16:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-129.683, -15.4536, -94.952, 1.43384, -62.7702, -15.7722, 0, 16, 32, 0, -63.4075, -47.3167)
 12:30/size_in_atlas = Vector2i(4, 8)
 12:30/0 = 0
 12:30/0/texture_origin = Vector2i(-32, 48)
 12:30/0/z_index = 4
-12:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 0, 0, 16, 94.63333, -33.615547, 32.81897, -67.70904, -0.31863403, -51.14024, 36.005264, -34.252808)
+12:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 0, 0, 16, 94.6333, -33.6155, 32.819, -67.709, -0.318634, -51.1402, 36.0053, -34.2528)
 12:22/size_in_atlas = Vector2i(4, 8)
 12:22/0 = 0
 12:22/0/texture_origin = Vector2i(32, 48)
 12:22/0/z_index = 4
-12:22/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.179077, -13.541809, 6.2132874, -24.056625, 32.022385, -10.99276, 12.585907, -2.7083588)
+12:22/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.1791, -13.5418, 6.21329, -24.0566, 32.0224, -10.9928, 12.5859, -2.70836)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7xss"]
 texture = ExtResource("2_ytmxs")
@@ -209,60 +209,60 @@ texture_region_size = Vector2i(32, 16)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(32, 64)
 0:0/0/z_index = 4
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 0, 31.95575, -67.643555, -1.1662598, -48.51676, -93.06821, -92.36845, -94.00122, -31.25599, -1.7349212, 15.13254)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 0, 31.9557, -67.6436, -1.16626, -48.5168, -93.0682, -92.3684, -94.0012, -31.256, -1.73492, 15.1325)
 4:0/size_in_atlas = Vector2i(4, 10)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(-32, 64)
 4:0/0/z_index = 4
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 0, -31.95575, -67.643555, 1.1662598, -48.51676, 93.06821, -92.36845, 94.00122, -31.25599, 1.7349212, 15.13254)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 0, -31.9557, -67.6436, 1.16626, -48.5168, 93.0682, -92.3684, 94.0012, -31.256, 1.73492, 15.1325)
 8:0/size_in_atlas = Vector2i(3, 9)
 8:0/0 = 0
 8:0/0/texture_origin = Vector2i(0, 48)
 8:0/0/z_index = 4
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 0, 0, 16, -95.90785, -31.225815, -63.088882, -48.750504)
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 0, 0, 16, -95.9079, -31.2258, -63.0889, -48.7505)
 11:0/size_in_atlas = Vector2i(3, 9)
 11:0/0 = 0
 11:0/0/texture_origin = Vector2i(0, 48)
 11:0/0/z_index = 4
-11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(34.730743, 14.338387, 15.294281, 22.304153, -43.333786, -8.603027, -24.534576, -16.887428)
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(34.7307, 14.3384, 15.2943, 22.3042, -43.3338, -8.60303, -24.5346, -16.8874)
 14:0/size_in_atlas = Vector2i(3, 9)
 14:0/0 = 0
 14:0/0/texture_origin = Vector2i(0, 48)
 14:0/0/z_index = 4
-14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(34.730743, 14.338387, 15.294281, 22.304153, -43.333786, -8.603027, -24.534576, -16.887428)
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(34.7307, 14.3384, 15.2943, 22.3042, -43.3338, -8.60303, -24.5346, -16.8874)
 17:0/size_in_atlas = Vector2i(3, 9)
 17:0/0 = 0
 17:0/0/texture_origin = Vector2i(0, 48)
 17:0/0/z_index = 5
-17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(34.730743, 14.338387, 15.294281, 22.304153, -43.333786, -8.603027, -24.534576, -16.887428)
+17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(34.7307, 14.3384, 15.2943, 22.3042, -43.3338, -8.60303, -24.5346, -16.8874)
 8:9/size_in_atlas = Vector2i(3, 9)
 8:9/0 = 0
 8:9/0/texture_origin = Vector2i(0, 48)
 8:9/0/z_index = 4
-8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.730743, 14.338387, -15.294281, 22.304153, 43.333786, -8.603027, 24.534576, -16.887428)
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.7307, 14.3384, -15.2943, 22.3042, 43.3338, -8.60303, 24.5346, -16.8874)
 11:9/size_in_atlas = Vector2i(3, 9)
 11:9/0 = 0
 11:9/0/texture_origin = Vector2i(0, 48)
 11:9/0/z_index = 4
-11:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.730743, 14.338387, -15.294281, 22.304153, 43.333786, -8.603027, 24.534576, -16.887428)
+11:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.7307, 14.3384, -15.2943, 22.3042, 43.3338, -8.60303, 24.5346, -16.8874)
 14:9/size_in_atlas = Vector2i(3, 9)
 14:9/0 = 0
 14:9/0/texture_origin = Vector2i(0, 48)
 14:9/0/z_index = 4
-14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.730743, 14.338387, -15.294281, 22.304153, 43.333786, -8.603027, 24.534576, -16.887428)
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.7307, 14.3384, -15.2943, 22.3042, 43.3338, -8.60303, 24.5346, -16.8874)
 17:9/size_in_atlas = Vector2i(3, 9)
 17:9/0 = 0
 17:9/0/texture_origin = Vector2i(0, 48)
 17:9/0/z_index = 4
-17:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.730743, 14.338387, -15.294281, 22.304153, 43.333786, -8.603027, 24.534576, -16.887428)
+17:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.7307, 14.3384, -15.2943, 22.3042, 43.3338, -8.60303, 24.5346, -16.8874)
 20:0/size_in_atlas = Vector2i(3, 15)
 20:0/0 = 0
 20:0/0/texture_origin = Vector2i(0, 81)
-20:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(49, -151, 49.38777, 39.19158, -47.794617, -8.603027, -47, -202)
+20:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(49, -151, 49.3878, 39.1916, -47.7946, -8.60303, -47, -202)
 23:0/size_in_atlas = Vector2i(3, 15)
 23:0/0 = 0
 23:0/0/texture_origin = Vector2i(0, 81)
-23:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-49, -151, -49.38777, 39.19158, 47.794617, -8.603027, 47, -202)
+23:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-49, -151, -49.3878, 39.1916, 47.7946, -8.60303, 47, -202)
 0:19/size_in_atlas = Vector2i(9, 21)
 0:19/0 = 0
 0:19/0/texture_origin = Vector2i(0, 80)
@@ -307,8 +307,9 @@ tile_map_data = PackedByteArray("AAALAP3/AQAOAA8AAAAMAP7/AQAOAA8AAAAMAP//AQAOAA8
 tile_set = SubResource("TileSet_0ftea")
 
 [node name="Player" parent="." instance=ExtResource("3_yroxo")]
-position = Vector2(841.00006, 549)
-scale = Vector2(0.55999756, 0.55999756)
+position = Vector2(841, 549)
+scale = Vector2(0.559998, 0.559998)
+collision_layer = 2
 
 [node name="interactable_objects" type="Node" parent="."]
 
@@ -325,7 +326,12 @@ position = Vector2(707, 5)
 position = Vector2(335, 24)
 
 [node name="InteractableObject" parent="interactable_objects" instance=ExtResource("4_0ftea")]
-position = Vector2(73, -22)
+position = Vector2(728, 526)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-160, 96, 288, -128, 543, 0, 352, 96, 448, 240, 544, 192, 576, 208, 673, 64, 609, 32, 736, -32, 927, 65, 800, 128, 736, 96, 640, 239, 671, 256, 608, 288, 704, 432, 864, 352, 1119, 480, 672, 704, 416, 576, 576, 496, 481, 352, 415, 384, 289, 320, 385, 272, 288, 127, 96, 224, -159, 96, -160, 96, 96, 225, 288, 128, 384, 272, 287, 320, 416, 385, 481, 353, 575, 496, 415, 576, 673, 705, 1120, 480, 863, 351, 704, 431, 609, 288, 672, 256, 641, 239, 736, 97, 801, 129, 928, 65, 736, -34, 608, 32, 671, 64, 576, 207, 544, 191, 448, 239, 353, 96, 544, 0, 287, -129, -161, 96, -159, 97, -159, 96)
 
 [connection signal="player_entered_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
 [connection signal="player_exited_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]
