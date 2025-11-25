@@ -309,7 +309,6 @@ tile_set = SubResource("TileSet_0ftea")
 [node name="Player" parent="." instance=ExtResource("3_yroxo")]
 position = Vector2(841, 549)
 scale = Vector2(0.559998, 0.559998)
-collision_layer = 2
 
 [node name="interactable_objects" type="Node" parent="."]
 
@@ -326,12 +325,12 @@ position = Vector2(707, 5)
 position = Vector2(335, 24)
 
 [node name="InteractableObject" parent="interactable_objects" instance=ExtResource("4_0ftea")]
-position = Vector2(728, 526)
+position = Vector2(73, -22)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-160, 96, 288, -128, 543, 0, 352, 96, 448, 240, 544, 192, 576, 208, 673, 64, 609, 32, 736, -32, 927, 65, 800, 128, 736, 96, 640, 239, 671, 256, 608, 288, 704, 432, 864, 352, 1119, 480, 672, 704, 416, 576, 576, 496, 481, 352, 415, 384, 289, 320, 385, 272, 288, 127, 96, 224, -159, 96, -160, 96, 96, 225, 288, 128, 384, 272, 287, 320, 416, 385, 481, 353, 575, 496, 415, 576, 673, 705, 1120, 480, 863, 351, 704, 431, 609, 288, 672, 256, 641, 239, 736, 97, 801, 129, 928, 65, 736, -34, 608, 32, 671, 64, 576, 207, 544, 191, 448, 239, 353, 96, 544, 0, 287, -129, -161, 96, -159, 97, -159, 96)
+polygon = PackedVector2Array(672, 703, 1119, 480, 865, 351, 703, 432, 607, 289, 672, 256, 639, 239, 736, 96, 800, 127, 926, 65, 736, -32, 608, 32, 671, 64, 577, 208, 543, 192, 448, 240, 352, 96, 544, 0, 288, -127, -159, 96, 96, 223, 288, 127, 385, 272, 288, 320, 416, 383, 482, 352, 576, 496, 417, 576, 672, 703, 672, 707, 410, 575, 570, 494, 480, 360, 415, 389, 279, 319, 378, 271, 285, 134, 92, 231, -169, 97, 291, -134, 551, -1, 359, 98, 449, 233, 545, 185, 575, 202, 665, 66, 598, 30, 737, -38, 934, 64, 800, 134, 737, 104, 645, 239, 677, 256, 614, 291, 703, 425, 866, 345, 1127, 481, 672, 707)
 
 [connection signal="player_entered_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
 [connection signal="player_exited_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]
