@@ -32,7 +32,7 @@ var path_to_save_file := "user://gamesave.cfg"
 var section_game := "slot1"
 
 func _ready():
-	#load_game()
+	load_game()
 	_connect_to_menu() 
 
 #func save_game():
