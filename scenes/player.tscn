@@ -265,8 +265,8 @@ script = ExtResource("1_v6fml")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 6
-scale = Vector2(0.0118677, 0.033026)
-zoom = Vector2(1.25, 1.25)
+scale = Vector2(0.00594716, 0.01655)
+zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
