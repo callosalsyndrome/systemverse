@@ -214,7 +214,7 @@ texture_region_size = Vector2i(32, 16)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(-32, 64)
 4:0/0/z_index = 4
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 0, -31.9557, -67.6436, 1.16626, -48.5168, 93.0682, -92.3684, 94.0012, -31.256, 1.73492, 15.1325)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 0, -31.3851, -70.8953, 63.8855, -78.5425, 96.7044, -95.7485, 95.4299, -31.7038, 1.73492, 15.1325)
 8:0/size_in_atlas = Vector2i(3, 9)
 8:0/0 = 0
 8:0/0/texture_origin = Vector2i(0, 48)
@@ -330,7 +330,10 @@ position = Vector2(73, -22)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(672, 703, 1119, 480, 865, 351, 703, 432, 607, 289, 672, 256, 639, 239, 736, 96, 800, 127, 926, 65, 736, -32, 608, 32, 671, 64, 577, 208, 543, 192, 448, 240, 352, 96, 544, 0, 288, -127, -159, 96, 96, 223, 288, 127, 385, 272, 288, 320, 416, 383, 482, 352, 576, 496, 417, 576, 672, 703, 672, 707, 410, 575, 570, 494, 480, 360, 415, 389, 279, 319, 378, 271, 285, 134, 92, 231, -169, 97, 291, -134, 551, -1, 359, 98, 449, 233, 545, 185, 575, 202, 665, 66, 598, 30, 737, -38, 934, 64, 800, 134, 737, 104, 645, 239, 677, 256, 614, 291, 703, 425, 866, 345, 1127, 481, 672, 707)
+polygon = PackedVector2Array(672, 703, 1119, 480, 1036.66, 438.18, 865, 351, 703, 432, 607, 289, 672, 256, 639, 239, 736, 96, 800, 127, 926, 65, 736, -32, 608, 32, 671, 64, 577, 208, 543, 192, 448, 240, 352, 96, 416, 64, 160, -65, -33, 34, 225, 161, 288, 127, 385, 272, 288, 320, 416, 383, 482, 352, 544.011, 449.351, 580, 432, 609, 447, 608, 478, 417, 576, 539.077, 636.799, 575, 610, 650, 636, 645, 689, 672, 703, 672, 707, 536.643, 638.805, 410, 575, 569, 495, 480, 360, 415, 389, 279, 319, 378, 271, 285, 134, 223, 168, -40, 35, 162, -68, 423, 63, 359, 98, 449, 233, 545, 185, 575, 202, 665, 66, 598, 30, 737, -38, 934, 64, 800, 134, 737, 104, 645, 239, 677, 256, 614, 291, 703, 425, 866, 345, 1127, 481, 672, 707)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(943, 455, 953, 485, 952, 469)
 
 [connection signal="player_entered_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
 [connection signal="player_exited_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]
