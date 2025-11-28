@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cwum1jch0cjnj"]
+[gd_scene load_steps=14 format=4 uid="uid://cwum1jch0cjnj"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_mkkox"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="2_b2a1o"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="3_xpbwm"]
 [ext_resource type="Script" uid="uid://bmhjg70xrump5" path="res://scenes/interactable_object_CHANGESCENE.gd" id="4_27dq3"]
 [ext_resource type="PackedScene" uid="uid://dwmecplqajte3" path="res://scenes/interactable_object.tscn" id="4_mvhas"]
+[ext_resource type="Texture2D" uid="uid://bthwnchqb1wyi" path="res://assets/sprites/snow2.png" id="7_cd025"]
+[ext_resource type="Texture2D" uid="uid://dttsmrxh1d7jo" path="res://assets/sprites/snow1.png" id="7_uyhvn"]
+[ext_resource type="Texture2D" uid="uid://c4fx0qq34ydfl" path="res://assets/sprites/snow3.png" id="9_n2udg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mvhas"]
 vertices = PackedVector2Array(32, 0, 0, 16, -32, 0, 0, -16)
@@ -136,16 +139,52 @@ scale = Vector2(0.4375, 0.4375)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(313, 72, 318, 108, 331, 138, 351, 163, 332, 146, 315, 108, 311, 74, -66, 257, -47, 279, -103, 304, -82, 323, -132, 354, -131, 441, -287, 526, -279, 641, -355, 687, -353, 752, -516, 838, -510, 863, -547, 882, -547, 909, -589, 897, -643, 926, -642, 964, -614, 974, -640, 993, -614, 1010, -640, 1023, -643, 1042, -568, 1077, -574, 1094, -552, 1111, -390, 1032, -352, 1055, -350, 1078, -320, 1093, -235, 1043, -293, 1012, -265, 980, -161, 1020, -135, 1002, -126, 1037, -97, 1045, -40, 1021, -6, 1033, 51, 1004, 42, 982, 82, 961, 85, 911, 123, 926, 213, 885, 512, 843, 641, 904, 939, 756, 1462, 489, 1462, 497, 634, 913, 506, 849, 207, 893, 128, 930, 88, 918, 85, 968, 48, 986, 58, 1008, -11, 1039, -39, 1026, -103, 1052, -134, 1040, -139, 1009, -160, 1028, -266, 987, -284, 1011, -226, 1040, -322, 1102, -361, 1079, -360, 1056, -393, 1039, -556, 1121, -655, 1040, -651, 923, -516, 826, -362, 746, -366, 677, -284, 635, -294, 514, -137, 433, -142, 348, -95, 322, -120, 299, -57, 274, -79, 253)
+polygon = PackedVector2Array(632, 292, 540, 335, 571, 348, 380, 439, 343, 424, 189, 507, 153, 491, -3, 572, -230, 720, -621, 1011, -509, 1090, -69, 803, -33, 814, 190, 692, 155, 657, 257, 611, 321, 644, 445, 578, 475, 595, 607, 529, 641, 545, 920, 395, 926, 401, 637, 552, 602, 534, 470, 604, 443, 584, 318, 649, 255, 616, 160, 659, 198, 695, -37, 823, -70, 809, -514, 1097, -635, 1009, -229, 711, 0, 565, 156, 483, 190, 500, 346, 414, 381, 430, 556, 348, 532, 332)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-164, 913, -132, 897, -99, 914, -100, 945, -133, 960, -133, 924)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(28, 848, 59, 833, 90, 848, 59, 865)
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(84, 3)
+amount = 35
+texture = ExtResource("7_uyhvn")
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(1400, 5)
+direction = Vector2(0.2, 1)
+spread = 160.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+color = Color(0.558134, 0.995251, 1, 1)
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(124, 832, 156, 817, 186, 833, 155, 848)
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(78, 4)
+amount = 35
+texture = ExtResource("7_cd025")
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(1400, 5)
+direction = Vector2(0.2, 1)
+spread = 160.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+color = Color(0.49411, 0.735041, 0.999999, 1)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(84, 3)
+amount = 35
+texture = ExtResource("9_n2udg")
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(1400, 5)
+direction = Vector2(0.2, 1)
+spread = 160.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+color = Color(0.494118, 0.733333, 1, 1)
 
 [connection signal="player_entered_interaction_zone" from="InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
 [connection signal="player_exited_interaction_zone" from="InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]
