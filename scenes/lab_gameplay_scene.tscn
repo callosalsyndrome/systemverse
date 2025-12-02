@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dv0ua4ff1do7g"]
+[gd_scene load_steps=15 format=4 uid="uid://dv0ua4ff1do7g"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_cnlya"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="1_embir"]
@@ -93,6 +93,10 @@ texture_region_size = Vector2i(64, 64)
 5:5/0 = 0
 5:5/0/texture_origin = Vector2i(0, 16)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e1pxt"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3h1fl"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yroxo"]
 texture = ExtResource("1_embir")
 texture_region_size = Vector2i(32, 16)
@@ -147,10 +151,12 @@ texture_region_size = Vector2i(32, 16)
 12:15/0/y_sort_origin = 32
 0:16/size_in_atlas = Vector2i(4, 9)
 0:16/0 = 0
+0:16/0/material = SubResource("CanvasItemMaterial_e1pxt")
 0:16/0/z_index = 4
 0:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.895935, 25.424637, -63.678253, 56.214127, -33.821777, 69.74284, 19.826569, 41.752396, 9.096893, 20.759567)
 4:16/size_in_atlas = Vector2i(4, 9)
 4:16/0 = 0
+4:16/0/material = SubResource("CanvasItemMaterial_e1pxt")
 4:16/0/z_index = 4
 4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(11.895935, 25.424637, 63.678253, 56.214127, 33.821777, 69.74284, -19.826569, 41.752396, -9.096893, 20.759567)
 0:34/size_in_atlas = Vector2i(2, 3)
@@ -174,31 +180,37 @@ texture_region_size = Vector2i(32, 16)
 30:31/size_in_atlas = Vector2i(4, 9)
 30:31/0 = 0
 30:31/0/texture_origin = Vector2i(0, 32)
+30:31/0/material = SubResource("CanvasItemMaterial_e1pxt")
 30:31/0/z_index = 4
 30:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40.352875, -26.824173, -66.01077, -14.694977, -4.4318237, 18.427032, 22.914368, 4.542816, 5.3648376, -9.096893)
 26:31/size_in_atlas = Vector2i(4, 9)
 26:31/0 = 0
 26:31/0/texture_origin = Vector2i(0, 32)
+26:31/0/material = SubResource("CanvasItemMaterial_e1pxt")
 26:31/0/z_index = 5
 26:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(40.352875, -26.824173, 66.01077, -14.694977, 4.4318237, 18.427032, -22.914368, 4.542816, -5.3648376, -9.096893)
 21:32/size_in_atlas = Vector2i(5, 8)
 21:32/0 = 0
 21:32/0/texture_origin = Vector2i(-48, 48)
+21:32/0/material = SubResource("CanvasItemMaterial_3h1fl")
 21:32/0/z_index = 4
 21:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(129.68271, -15.453598, 94.95196, 1.4338379, 62.77025, -15.772224, 0, 16, -32, 0, 63.407516, -47.31667)
 16:32/size_in_atlas = Vector2i(5, 8)
 16:32/0 = 0
 16:32/0/texture_origin = Vector2i(48, 48)
+16:32/0/material = SubResource("CanvasItemMaterial_3h1fl")
 16:32/0/z_index = 4
 16:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-129.68271, -15.453598, -94.95196, 1.4338379, -62.77025, -15.772224, 0, 16, 32, 0, -63.407516, -47.31667)
 12:30/size_in_atlas = Vector2i(4, 8)
 12:30/0 = 0
 12:30/0/texture_origin = Vector2i(-32, 48)
+12:30/0/material = SubResource("CanvasItemMaterial_3h1fl")
 12:30/0/z_index = 4
 12:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 0, 0, 16, 94.63333, -33.615547, 32.81897, -67.70904, -0.31863403, -51.14024, 36.005264, -34.252808)
 12:22/size_in_atlas = Vector2i(4, 8)
 12:22/0 = 0
 12:22/0/texture_origin = Vector2i(32, 48)
+12:22/0/material = SubResource("CanvasItemMaterial_3h1fl")
 12:22/0/z_index = 4
 12:22/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.179077, -13.541809, 6.2132874, -24.056625, 32.022385, -10.99276, 12.585907, -2.7083588)
 
@@ -285,6 +297,15 @@ sources/0 = SubResource("TileSetAtlasSource_ytmxs")
 sources/1 = SubResource("TileSetAtlasSource_yroxo")
 sources/2 = SubResource("TileSetAtlasSource_s7xss")
 
+[sub_resource type="Gradient" id="Gradient_cnlya"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e1pxt"]
+gradient = SubResource("Gradient_cnlya")
+fill = 1
+fill_from = Vector2(0.5132743, 0.49557522)
+fill_to = Vector2(0.30530974, 0.07964602)
+
 [node name="LabGameplayScene" type="Node2D"]
 script = ExtResource("1_cnlya")
 
@@ -310,7 +331,7 @@ tile_set = SubResource("TileSet_0ftea")
 position = Vector2(841.00006, 549)
 scale = Vector2(0.55999756, 0.55999756)
 
-[node name="interactable_objects" type="Node" parent="."]
+[node name="interactable_objects" type="Node2D" parent="."]
 
 [node name="InteractableObject5" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(917, 439)
@@ -326,6 +347,56 @@ position = Vector2(335, 24)
 
 [node name="InteractableObject" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(73, -22)
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting"]
+position = Vector2(385, -19)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_e1pxt")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lighting"]
+position = Vector2(250.00002, -78)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_e1pxt")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lighting"]
+position = Vector2(317, -45)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_e1pxt")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lighting"]
+position = Vector2(106.49998, 114.75001)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_e1pxt")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lighting"]
+position = Vector2(-28.500008, 55.750008)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_e1pxt")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lighting"]
+position = Vector2(38.499977, 88.75001)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_e1pxt")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lighting"]
+position = Vector2(696, -30.999962)
+rotation = -0.50620157
+scale = Vector2(2.877219, 1.9532753)
+texture = SubResource("GradientTexture2D_e1pxt")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lighting"]
+rotation = 4.7577677
+color = Color(0.17945735, 0.058689706, 0.08083046, 0.44705883)
+energy = 3.3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.7490196)
+shadow_filter = 1
+shadow_filter_smooth = 12.5
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
+color = Color(0.46811864, 0.36943915, 0.52734375, 1)
 
 [connection signal="player_entered_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
 [connection signal="player_exited_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]
