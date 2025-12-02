@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cwum1jch0cjnj"]
+[gd_scene load_steps=14 format=4 uid="uid://cwum1jch0cjnj"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_mkkox"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="2_b2a1o"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="3_xpbwm"]
 [ext_resource type="Script" uid="uid://bmhjg70xrump5" path="res://scenes/interactable_object_CHANGESCENE.gd" id="4_27dq3"]
 [ext_resource type="PackedScene" uid="uid://dwmecplqajte3" path="res://scenes/interactable_object.tscn" id="4_mvhas"]
+[ext_resource type="Texture2D" uid="uid://bthwnchqb1wyi" path="res://assets/sprites/snow2.png" id="7_cd025"]
+[ext_resource type="Texture2D" uid="uid://dttsmrxh1d7jo" path="res://assets/sprites/snow1.png" id="7_uyhvn"]
+[ext_resource type="Texture2D" uid="uid://c4fx0qq34ydfl" path="res://assets/sprites/snow3.png" id="9_n2udg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mvhas"]
 vertices = PackedVector2Array(32, 0, 0, 16, -32, 0, 0, -16)
@@ -79,8 +82,8 @@ texture_region_size = Vector2i(64, 64)
 9:0/size_in_atlas = Vector2i(9, 6)
 9:0/0 = 0
 9:0/0/z_index = 1
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-146.16486, -3.7565765, -146.16486, 64.544754, -110.64816, 93.91435, -72.399414, 91.1823, 1.3660278, 126.69899, -0.6830139, 147.87239, 53.95807, 184.0721, 139.33475, 164.26472, 168.70432, 132.1631, 288.23166, 189.53621, 289.5977, -192.95128, -253.39795, -195.68333, -253.39795, -101.42749, -268.42426, -83.66914, -248.61685, -54.29956)
-9:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-146.16486, -3.7565765, -146.16486, 64.544754, -110.64816, 93.91435, -72.399414, 91.1823, 1.3660278, 126.69899, -0.6830139, 147.87239, 53.95807, 184.0721, 139.33475, 164.26472, 168.70432, 132.1631, 288.23166, 189.53621, 289.5977, -192.95128, -253.39795, -195.68333, -253.39795, -101.42749, -268.42426, -83.66914, -248.61685, -54.29956)
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-146.165, -3.75658, -146.165, 64.5448, -110.648, 93.9144, -72.3994, 91.1823, 1.36603, 126.699, -0.683014, 147.872, 53.9581, 184.072, 139.335, 164.265, 168.704, 132.163, 288.232, 189.536, 289.598, -192.951, -253.398, -195.683, -253.398, -101.427, -268.424, -83.6691, -248.617, -54.2996)
+9:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-146.165, -3.75658, -146.165, 64.5448, -110.648, 93.9144, -72.3994, 91.1823, 1.36603, 126.699, -0.683014, 147.872, 53.9581, 184.072, 139.335, 164.265, 168.704, 132.163, 288.232, 189.536, 289.598, -192.951, -253.398, -195.683, -253.398, -101.427, -268.424, -83.6691, -248.617, -54.2996)
 9:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mvhas")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cd025"]
@@ -89,7 +92,7 @@ texture_region_size = Vector2i(64, 32)
 1:0/size_in_atlas = Vector2i(19, 20)
 1:0/0 = 0
 1:0/0/z_index = 1
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(607.6016, -322.10205, -544.64526, -319.17383, -551.9657, -178.62022, -585.64, -105.41522, -543.18115, -32.210205, -490.47354, -23.425629, -409.948, -54.171722, -387.9865, -1.4641113, -304.53284, 29.281982, -278.17902, 60.028107, -284.0354, 115.66391, -256.21753, 153.7305, -209.36633, 144.94589, -137.62543, 178.62021, -86.3819, 247.43289, -14.640991, 226.93552, 36.60254, 183.01248, 172.76385, 263.538, 282.57135, 197.65353, 355.7763, 307.46103, 610.5297, 320.6379)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(607.602, -322.102, -544.645, -319.174, -551.966, -178.62, -585.64, -105.415, -543.181, -32.2102, -490.474, -23.4256, -409.948, -54.1717, -387.987, -1.46411, -304.533, 29.282, -278.179, 60.0281, -284.035, 115.664, -256.218, 153.73, -209.366, 144.946, -137.625, 178.62, -86.3819, 247.433, -14.641, 226.936, 36.6025, 183.012, 172.764, 263.538, 282.571, 197.654, 355.776, 307.461, 610.53, 320.638)
 
 [sub_resource type="TileSet" id="TileSet_1126i"]
 tile_shape = 1
@@ -104,7 +107,7 @@ sources/1 = SubResource("TileSetAtlasSource_cd025")
 script = ExtResource("1_mkkox")
 
 [node name="SnowTileMap" type="TileMapLayer" parent="."]
-self_modulate = Color(1.179842, 1.179842, 1.179842, 1)
+self_modulate = Color(1.17984, 1.17984, 1.17984, 1)
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(443, -111)
@@ -112,7 +115,7 @@ tile_map_data = PackedByteArray("AAAEABQAAAAAAAIAAAD7/yUAAAAAAAIAAAADABUAAAABAAM
 tile_set = SubResource("TileSet_1126i")
 
 [node name="LabTileMap" type="TileMapLayer" parent="."]
-modulate = Color(1.0320225, 1.0469848, 1.3312713, 1)
+modulate = Color(1.03202, 1.04698, 1.33127, 1)
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(397, -88)
@@ -130,8 +133,58 @@ script = ExtResource("4_27dq3")
 
 [node name="Player" parent="." instance=ExtResource("2_b2a1o")]
 z_index = 2
-position = Vector2(-532, 1009.00006)
-scale = Vector2(0.4375002, 0.4375002)
+position = Vector2(-532, 1009)
+scale = Vector2(0.4375, 0.4375)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(632, 292, 540, 335, 571, 348, 380, 439, 343, 424, 189, 507, 153, 491, -3, 572, -230, 720, -621, 1011, -509, 1090, -69, 803, -33, 814, 190, 692, 155, 657, 257, 611, 321, 644, 445, 578, 475, 595, 607, 529, 641, 545, 920, 395, 926, 401, 637, 552, 602, 534, 470, 604, 443, 584, 318, 649, 255, 616, 160, 659, 198, 695, -37, 823, -70, 809, -514, 1097, -635, 1009, -229, 711, 0, 565, 156, 483, 190, 500, 346, 414, 381, 430, 556, 348, 532, 332)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(84, 3)
+amount = 35
+texture = ExtResource("7_uyhvn")
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(1400, 5)
+direction = Vector2(0.2, 1)
+spread = 160.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+color = Color(0.558134, 0.995251, 1, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(78, 4)
+amount = 35
+texture = ExtResource("7_cd025")
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(1400, 5)
+direction = Vector2(0.2, 1)
+spread = 160.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+color = Color(0.49411, 0.735041, 0.999999, 1)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(84, 3)
+amount = 35
+texture = ExtResource("9_n2udg")
+lifetime = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(1400, 5)
+direction = Vector2(0.2, 1)
+spread = 160.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+color = Color(0.494118, 0.733333, 1, 1)
 
 [connection signal="player_entered_interaction_zone" from="InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
 [connection signal="player_exited_interaction_zone" from="InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]

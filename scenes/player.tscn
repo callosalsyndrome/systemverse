@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bxus3ck0810fw" path="res://assets/sprites/new character sprites/down_step_left.png" id="6_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://cf55pon6higml" path="res://assets/sprites/player animations/up.png" id="8_smehm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(138, 135)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_fjrip")
 region = Rect2(0, 0, 100, 100)
@@ -256,8 +253,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu4a1"]
-radius = 19.0
-height = 38.0
+radius = 20.0
+height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(138, 135)
 
 [node name="Player" type="CharacterBody2D"]
 floor_block_on_wall = false
@@ -265,10 +265,35 @@ script = ExtResource("1_v6fml")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 6
+<<<<<<< HEAD
 scale = Vector2(0.004081023, 0.011356858)
 zoom = Vector2(1.5, 1.5)
+=======
+scale = Vector2(0.00594716, 0.01655)
+zoom = Vector2(1.7, 1.7)
+>>>>>>> e8ef7de01c7454563392138807f2e2f0f9660ba0
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 4
+<<<<<<< HEAD
+scale = Vector2(1.1656227, 1.1656227)
+=======
+scale = Vector2(1.5, 1.5)
+>>>>>>> e8ef7de01c7454563392138807f2e2f0f9660ba0
+sprite_frames = SubResource("SpriteFrames_mdl7e")
+animation = &"vertical_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 4
+<<<<<<< HEAD
+position = Vector2(0, 30.000004)
+scale = Vector2(0.7770818, 0.7770818)
+=======
+position = Vector2(0, 47)
+>>>>>>> e8ef7de01c7454563392138807f2e2f0f9660ba0
+shape = SubResource("CapsuleShape2D_qu4a1")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -276,16 +301,3 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, -1.5)
 shape = SubResource("RectangleShape2D_g2els")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 4
-scale = Vector2(1.1656227, 1.1656227)
-sprite_frames = SubResource("SpriteFrames_mdl7e")
-animation = &"diagonal_down"
-frame_progress = 0.86168456
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = 4
-position = Vector2(0, 30.000004)
-scale = Vector2(0.7770818, 0.7770818)
-shape = SubResource("CapsuleShape2D_qu4a1")

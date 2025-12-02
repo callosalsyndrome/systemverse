@@ -86,8 +86,16 @@ func _physics_process(_delta):
 	if input_direction.length() > 0:
 		input_direction = input_direction.normalized()
 	
+	if Input.is_action_pressed("speed"):
+		speed = 250
+	else:
+		speed = 150
+	
 	# Двигаем персонажа
-	position += input_direction * speed * _delta
+	#position += input_direction * speed * _delta #ЛОМАЕТ ВСЮ ФИЗИКУ СТОЛКНОВЕНИЙ
+	
+	velocity = input_direction * speed
+	move_and_slide()
 	
 	#попытка в остановку анимации
 	if not is_moving:
