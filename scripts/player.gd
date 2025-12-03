@@ -13,7 +13,18 @@ signal checkpoint_reached()
 var last_direction = ""
 var is_moving = false
 
+#переменные для работы с лифтом
+var current_lift = null  #текущий лифт, с которым можно взаимодействовать
+var is_in_lift = false   #находится ли игрок внутри лифта
+var is_being_carried = false  #переносит ли лифт игрока
+
 func _physics_process(_delta):
+	
+	# Если игрока переносит лифт, отключаем управление
+	if is_being_carried:
+		velocity = Vector2.ZERO
+		return
+	
 	var input_direction = Vector2.ZERO
 	is_moving = false
 	
@@ -93,6 +104,7 @@ func _physics_process(_delta):
 	
 	# Двигаем персонажа
 	#position += input_direction * speed * _delta #ЛОМАЕТ ВСЮ ФИЗИКУ СТОЛКНОВЕНИЙ
+
 	
 	velocity = input_direction * speed
 	move_and_slide()
@@ -138,5 +150,3 @@ func _physics_process(_delta):
 				$AnimatedSprite2D.animation = "diagonal_down"
 				$AnimatedSprite2D.stop()
 				$AnimatedSprite2D.frame = 1
-	
-	

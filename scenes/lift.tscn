@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk3npnff53c0r"]
+
+[ext_resource type="Script" uid="uid://vqtnkqhugv3b" path="res://scripts/lift.gd" id="1_k0vmm"]
+[ext_resource type="Texture2D" uid="uid://dftyravrtrblh" path="res://assets/sprites/lift_sprites/лифт_статика.png" id="1_uukkg"]
+[ext_resource type="Texture2D" uid="uid://rf4vyod1rl77" path="res://assets/sprites/lift_sprites/лифт_дверь35.png" id="2_k0vmm"]
+[ext_resource type="Texture2D" uid="uid://brct6u04bxkp5" path="res://assets/sprites/lift_sprites/лифт_дверь4.png" id="3_d5w05"]
+[ext_resource type="Texture2D" uid="uid://dsp5rjbtlxwh1" path="res://assets/sprites/lift_sprites/лифт_дверь2.png" id="4_sotwc"]
+[ext_resource type="Texture2D" uid="uid://dgx8yelmj8j6o" path="res://assets/sprites/lift_sprites/лифт_дверь1.png" id="5_b2qkj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thwny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uukkg")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k0vmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d5w05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sotwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b2qkj")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_b2qkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sotwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d5w05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k0vmm")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h45n1"]
+size = Vector2(129, 202)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yam7"]
+size = Vector2(151, 226)
+
+[node name="Lift" type="Area2D"]
+script = ExtResource("1_k0vmm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, 18.666672)
+scale = Vector2(1.1866666, 1.1866667)
+sprite_frames = SubResource("SpriteFrames_thwny")
+animation = &"closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(6.5, 17)
+shape = SubResource("RectangleShape2D_h45n1")
+
+[node name="LiftDetection" type="Area2D" parent="."]
+visible = false
+
+[node name="DetectionShape" type="CollisionShape2D" parent="LiftDetection"]
+position = Vector2(6.5, 20)
+shape = SubResource("RectangleShape2D_3yam7")

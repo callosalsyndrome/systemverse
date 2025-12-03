@@ -265,38 +265,23 @@ script = ExtResource("1_v6fml")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 6
-<<<<<<< HEAD
-scale = Vector2(0.004081023, 0.011356858)
-zoom = Vector2(1.5, 1.5)
-=======
 scale = Vector2(0.00594716, 0.01655)
 zoom = Vector2(1.7, 1.7)
->>>>>>> e8ef7de01c7454563392138807f2e2f0f9660ba0
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 4
-<<<<<<< HEAD
-scale = Vector2(1.1656227, 1.1656227)
-=======
 scale = Vector2(1.5, 1.5)
->>>>>>> e8ef7de01c7454563392138807f2e2f0f9660ba0
 sprite_frames = SubResource("SpriteFrames_mdl7e")
 animation = &"vertical_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 4
-<<<<<<< HEAD
-position = Vector2(0, 30.000004)
-scale = Vector2(0.7770818, 0.7770818)
-=======
 position = Vector2(0, 47)
->>>>>>> e8ef7de01c7454563392138807f2e2f0f9660ba0
 shape = SubResource("CapsuleShape2D_qu4a1")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, -1.5)
