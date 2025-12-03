@@ -24,9 +24,23 @@ func handle_interaction():
 	interaction_started.emit(self)
 	perform_interaction()
 	
+#!!!!!!!!!!!!!!!!!!!!!!!!
 func perform_interaction(): #переопределяется для дочерних классов
 	print("Взаимодействие с ", name)
-	interaction_triggered.emit()
+	# Простая проверка: если это третий объект - это кнопка лифта
+	if name == "InteractableObject3":
+		print("Активация лифта!")
+		
+		# Ищем лифт в сцене
+		var lift = get_tree().get_first_node_in_group("lift")
+		if lift and lift.has_method("start_lift"):
+			lift.start_lift()
+		else:
+			print("Ошибка: лифт не найден!")
+	else:
+		# Для других объектов - стандартное поведение
+		interaction_triggered.emit()
+#!!!!!!!!!!!!!!!!!!!!!!!!
 
 func _on_body_entered(body: Node):
 	# Проверяем, что вошел игрок (по имени или группе)
