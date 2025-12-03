@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bwurxgdws211c"]
+[gd_scene load_steps=13 format=4 uid="uid://dv0ua4ff1do7g"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_cnlya"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="1_embir"]
@@ -285,6 +285,15 @@ sources/0 = SubResource("TileSetAtlasSource_ytmxs")
 sources/1 = SubResource("TileSetAtlasSource_yroxo")
 sources/2 = SubResource("TileSetAtlasSource_s7xss")
 
+[sub_resource type="Gradient" id="Gradient_uwihb"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cnlya"]
+gradient = SubResource("Gradient_uwihb")
+fill = 1
+fill_from = Vector2(0.5132743, 0.49557522)
+fill_to = Vector2(0.30530974, 0.07964602)
+
 [node name="LabGameplayScene" type="Node2D"]
 script = ExtResource("1_cnlya")
 
@@ -310,7 +319,7 @@ tile_set = SubResource("TileSet_0ftea")
 position = Vector2(841, 549)
 scale = Vector2(0.559998, 0.559998)
 
-[node name="interactable_objects" type="Node" parent="."]
+[node name="interactable_objects" type="Node2D" parent="."]
 
 [node name="InteractableObject5" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(917, 439)
@@ -334,6 +343,68 @@ polygon = PackedVector2Array(672, 703, 1119, 480, 1036.66, 438.18, 865, 351, 703
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(943, 455, 953, 485, 952, 469)
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lighting"]
+rotation = 4.7577677
+color = Color(0.17945735, 0.058689706, 0.08083046, 0.44705883)
+energy = 3.3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.7490196)
+shadow_filter = 1
+shadow_filter_smooth = 12.5
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
+color = Color(0.62441695, 0.49323696, 0.703125, 1)
+
+[node name="energy" type="Node2D" parent="Lighting"]
+position = Vector2(-122, -699)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/energy"]
+position = Vector2(98.00002, 753)
+rotation = 0.41947567
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_cnlya")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lighting/energy"]
+position = Vector2(156.00003, 791)
+rotation = 0.41947567
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_cnlya")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lighting/energy"]
+position = Vector2(223.00003, 815)
+rotation = 0.41947567
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_cnlya")
+
+[node name="energy2" type="Node2D" parent="Lighting"]
+position = Vector2(154, -840)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/energy2"]
+position = Vector2(98.00002, 753)
+rotation = 0.41947567
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_cnlya")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lighting/energy2"]
+position = Vector2(156.00003, 791)
+rotation = 0.41947567
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_cnlya")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lighting/energy2"]
+position = Vector2(223.00003, 815)
+rotation = 0.41947567
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_cnlya")
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting"]
+position = Vector2(727.00006, -39)
+rotation = 0.41947567
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_cnlya")
 
 [connection signal="player_entered_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
 [connection signal="player_exited_interaction_zone" from="interactable_objects/InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]

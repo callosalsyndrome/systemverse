@@ -1,7 +1,29 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwmecplqajte3"]
+[gd_scene load_steps=16 format=3 uid="uid://dwmecplqajte3"]
 
-[ext_resource type="Script" uid="uid://db4hwo0mijc3j" path="res://scripts/interactable_object.gd" id="1_1cvqn"]
+[ext_resource type="Script" path="res://scripts/interactable_object.gd" id="1_1cvqn"]
 [ext_resource type="Texture2D" uid="uid://bfmlmfvus1k5i" path="res://assets/sprites/анимация предмета.png" id="1_gknyc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gknyc"]
+radius = 86.00581
+
+[sub_resource type="Gradient" id="Gradient_1cvqn"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1t2qe"]
+gradient = SubResource("Gradient_1cvqn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8888889, 0.85897434)
+
+[sub_resource type="Gradient" id="Gradient_1t2qe"]
+offsets = PackedFloat32Array(0, 0.74752474)
+colors = PackedColorArray(1, 0.49, 0.49, 0.3764706, 1, 0.49, 0.49, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ieyjc"]
+gradient = SubResource("Gradient_1t2qe")
+fill = 1
+fill_from = Vector2(0.51282054, 0.4957265)
+fill_to = Vector2(0.8717949, 0.0982906)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1cvqn"]
 atlas = ExtResource("1_gknyc")
@@ -60,28 +82,31 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gknyc"]
-radius = 86.00581
-
-[sub_resource type="Gradient" id="Gradient_1cvqn"]
-interpolation_mode = 2
-colors = PackedColorArray(1, 0.41000003, 0.4296667, 0.44705883, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1t2qe"]
-gradient = SubResource("Gradient_1cvqn")
-fill = 1
-fill_from = Vector2(0.4957265, 0.508547)
-fill_to = Vector2(0.23504274, 0.7777778)
-metadata/_snap_count = 20
-
 [node name="InteractableObject" type="Node2D"]
 z_index = 5
 script = ExtResource("1_1cvqn")
 
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gknyc")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.3, 0.39333326, 0.5411765)
+energy = 0.79
+texture = SubResource("GradientTexture2D_1t2qe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.6293945e-06, 1.9073486e-06)
+scale = Vector2(1.0861819, 1.0898441)
+texture = SubResource("GradientTexture2D_ieyjc")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b513d")
 animation = &"glow"
-frame_progress = 0.4629842
+frame = 6
+frame_progress = 0.39290664
 
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
 show_behind_parent = true
@@ -91,11 +116,3 @@ offset_right = 27.787203
 offset_bottom = 40.480305
 rotation = -0.7853982
 scale = Vector2(0.4734728, 0.48840278)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_gknyc")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_1t2qe")
