@@ -82,10 +82,10 @@ func move_up():
 	
 	#сохраняем ссылку на игрока
 	var player_to_move = player
-	var transition_start = 250
+	var transition_start = 200
 	
 	#двигаем ВСЕГДА, если игрок есть
-	for i in range(300): #почти ровно до верха 400 пикселей (800/2)
+	for i in range(230): #почти ровно до верха 400 пикселей (800/2)
 		#двигаем лифт
 		global_position.y -= 2
 		
