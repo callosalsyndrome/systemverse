@@ -21,7 +21,10 @@ func handle_world_changed(current_world_name: String):
 			next_world_name = "lab_lift_gameplay_scene"
 		"LabGameplayScene":
 			next_world_name = "lab_lift_gameplay_scene"
-		_:
+		"lab_lift_gameplay_scene":
+			next_world_name = "hton_scene"
+		"LabLiftGameplayScene":
+			next_world_name = "hton_scene"
 			return
 	
 	next_world = load("res://scenes/" + next_world_name + ".tscn").instantiate()

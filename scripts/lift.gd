@@ -82,9 +82,10 @@ func move_up():
 	
 	#сохраняем ссылку на игрока
 	var player_to_move = player
+	var transition_start = 250
 	
 	#двигаем ВСЕГДА, если игрок есть
-	for i in range(400): #800 (или 400*2) пикселей, доезжает до верха
+	for i in range(300): #почти ровно до верха 400 пикселей (800/2)
 		#двигаем лифт
 		global_position.y -= 2
 		
@@ -92,7 +93,17 @@ func move_up():
 		if player_to_move:
 			player_to_move.global_position.y -= 2
 		
+		# Когда дошли до точки начала перехода
+		if i == transition_start:
+			print("переход")
+			var change_scene = get_tree().current_scene
+			change_scene.handle_world_changed("lab_lift_gameplay_scene")
+			
 		#небольшая пауза
 		await get_tree().create_timer(0.01).timeout
 	
 	print("всё")
+	
+	#если до конца доезжать
+	#var change_scene = get_tree().current_scene
+	#change_scene.handle_world_changed("lab_lift_gameplay_scene")
