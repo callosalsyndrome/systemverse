@@ -31,9 +31,9 @@ var config
 var path_to_save_file := "user://gamesave.cfg"
 var section_game := "slot1"
 
-func _ready():
-	load_game()
-	_connect_to_menu() 
+#func _ready():
+#	load_game()
+#	_connect_to_menu() 
 
 #func save_game():
 	#config.set_value(section_game, "position_player", player.position)
