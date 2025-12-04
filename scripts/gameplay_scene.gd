@@ -5,7 +5,7 @@ signal world_changed(world_name)
 
 func _ready():
 	print("GP: Я - ", name)
-	add_to_group("gameplay_scene")  
+	add_to_group("player_ready_listeners")
 	_on_game_started()
 	
 func _on_game_started():

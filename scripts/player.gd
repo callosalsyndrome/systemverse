@@ -13,6 +13,11 @@ signal checkpoint_reached()
 var last_direction = ""
 var is_moving = false
 
+func _ready() -> void:
+	add_to_group("player")
+	# Сигнализируем что Player готов
+	get_tree().call_group("player_ready_listeners", "_on_player_ready", self)
+
 func _physics_process(_delta):
 	var input_direction = Vector2.ZERO
 	is_moving = false

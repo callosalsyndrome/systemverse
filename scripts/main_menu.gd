@@ -30,6 +30,13 @@ func _on_start_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	exit_button_pressed.emit()
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		SaveLoadManager.position = player.position
+		print("Позиция игрока сохранена: ", player.position)
+	else:
+		print("Player не найден")	
+	SaveLoadManager.save_game()
 	get_tree().quit() 
 	
 #func _exit_tree():
