@@ -418,7 +418,7 @@ tile_map_data = PackedByteArray("AAATAAoAAQAAABAAAAAUAAwAAQAAABAAAAAVAA4AAQAAABA
 tile_set = SubResource("TileSet_0ftea")
 
 [node name="Lift" parent="." instance=ExtResource("4_7mtat")]
-position = Vector2(663, 366)
+position = Vector2(678, 420)
 
 [node name="Player" parent="." instance=ExtResource("3_3bgeo")]
 position = Vector2(1205, 983)
@@ -433,7 +433,7 @@ position = Vector2(1400, 305)
 position = Vector2(303, 868)
 
 [node name="InteractableObject3" parent="interactable_objects" instance=ExtResource("4_s7xss")]
-position = Vector2(698, 429)
+position = Vector2(695, 457)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -442,3 +442,6 @@ polygon = PackedVector2Array(928, 992, 927, 992, 960, 1008, 929, 1024, 1056, 108
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(1160, 204, 1168, 200, 1195, 209, 1186, 218)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(597, 482, 603, 490, 660, 504, 722, 474, 719, 466, 728, 450, 727, 444, 679, 441, 684, 438, 731, 439, 736, 449, 733, 463, 720, 484, 660, 517, 603, 502, 598, 491)

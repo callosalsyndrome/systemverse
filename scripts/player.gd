@@ -13,16 +13,18 @@ signal checkpoint_reached()
 var last_direction = ""
 var is_moving = false
 
-#переменные для работы с лифтом
-var current_lift = null  #текущий лифт, с которым можно взаимодействовать
-var is_in_lift = false   #находится ли игрок внутри лифта
 var is_being_carried = false  #переносит ли лифт игрока
 
 func _physics_process(_delta):
 	
-	# Если игрока переносит лифт, отключаем управление
+	#отключаем управление в лифте
 	if is_being_carried:
+		#чтобы красиво стоял в лифе
+		$AnimatedSprite2D.animation = "diagonal_down"
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 1
 		velocity = Vector2.ZERO
+		move_and_slide()
 		return
 	
 	var input_direction = Vector2.ZERO
