@@ -23,6 +23,7 @@ config/icon="uid://cxvyvsihlybth"
 GameStateManager="*res://scripts/autoloads/GameStateManager.gd"
 SaveLoadManager="*res://scripts/autoloads/Save_LoadManager.gd"
 UiManager="*res://scripts/autoloads/UIManager.gd"
+DialogManager="*res://scripts/autoloads/DialogManager.gd"
 
 [display]
 

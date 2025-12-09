@@ -323,15 +323,19 @@ scale = Vector2(0.559998, 0.559998)
 
 [node name="InteractableObject5" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(917, 439)
+dialog_id = "desk"
 
 [node name="InteractableObject4" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(839, 51)
+dialog_id = "shelves"
 
 [node name="InteractableObject3" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(707, 5)
+dialog_id = "computer"
 
 [node name="InteractableObject2" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(335, 24)
+dialog_id = "generator"
 
 [node name="InteractableObject" parent="interactable_objects" instance=ExtResource("4_0ftea")]
 position = Vector2(73, -22)
