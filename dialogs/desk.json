@@ -1,21 +1,24 @@
 {
 	"item_id": "desk",
-	"portrait": "res://assets/sprites/new character sprites/down.png",
 	"lines": [
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
 			"text": "Столько исследований... Я действительно счастлив, что сейчас все идет как по маслу."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_proud.png",
 			"text": "Не зря мы, вирусы, в большинстве своем лучшие инженеры и ученые."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
 			"text": "Некоторые из компонентов проекта хорошо используются и для других задач. Это впечатляющая работа."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_proud.png",
 			"text": "Надеюсь, наши усилия не будут напрасны, и мы увидим мир за пределами купола."
 		}
 	]

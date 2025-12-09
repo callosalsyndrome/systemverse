@@ -1,17 +1,19 @@
 {
 	"item_id": "shelves",
-	"portrait": "res://assets/sprites/new character sprites/down.png",
 	"lines": [
 		{
-			"speaker": "я",
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
 			"text": "Это полки"
 		},
 		{
-			"speaker": "я",
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
 			"text": "На них что-то лежит"
 		},
 		{
-			"speaker": "я",
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_proud.png",
 			"text": "Пока, полки"
 		}
 	]

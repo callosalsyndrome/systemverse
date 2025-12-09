@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmyw5rjhbfsn6"]
 
-[ext_resource type="Script" uid="uid://o2jqbgnbvhl0" path="res://scenes/dialog_ui.gd" id="1_yjvli"]
+[ext_resource type="Script" uid="uid://vhfrv52y875s" path="res://scenes/dialog_ui.gd" id="1_yjvli"]
 
 [node name="DialogUI" type="CanvasLayer"]
 script = ExtResource("1_yjvli")
@@ -24,8 +24,8 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -80.0
-offset_right = 80.0
+offset_top = -219.0
+offset_right = 178.0
 grow_vertical = 0
 expand_mode = 1
 

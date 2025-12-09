@@ -1,33 +1,39 @@
 {
 	"item_id": "generator",
-	"portrait": "res://assets/sprites/new character sprites/down.png",
 	"lines": [
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
 			"text": "Эти энергоблоки действительно стали открытием в лаборатории."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_proud.png",
 			"text": "Столько времени ушло на их разработку и, к счастью, это действительно стоило усилий!"
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_proud.png",
 			"text": "Они расположены повсюду, питают башню электричеством повсеместно. Теперь у нас достаточно энергии на наши планы."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
 			"text": "...По крайней мере до тех пор, пока мы не начнем расширяться."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
 			"text": "Все же наш проект и так поглощает почти 80% от всей мощи лаборатории. Спустя время ему понадобится еще больше."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
 			"text": "..."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
 			"text": "Думаю стоит поставить еще десяток таких же."
 		}
 	]

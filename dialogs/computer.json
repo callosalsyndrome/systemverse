@@ -1,17 +1,19 @@
 {
 	"item_id": "computer",
-	"portrait": "res://assets/sprites/new character sprites/down.png",
 	"lines": [
 		{
-			"speaker": "я",
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
 			"text": "Это компьютер"
 		},
 		{
-			"speaker": "я",
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
 			"text": "Он что-что делает"
 		},
 		{
-			"speaker": "я",
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
 			"text": "Пока, компьютер"
 		}
 	]

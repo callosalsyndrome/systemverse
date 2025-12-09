@@ -1,13 +1,14 @@
 {
 	"item_id": "desk",
-	"portrait": "res://assets/sprites/new character sprites/down.png",
 	"lines": [
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
 			"text": "Хмм.. Нужно не забыть провести тесты на этой маске."
 		},
 		{
 			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
 			"text": "Мы еще ни разу не испытывали ее, но как же много от нее зависит... Все пилотирование машины заложено в ней."
 		}
 	]
