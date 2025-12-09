@@ -21,12 +21,12 @@ func load_game():
 
 
 func _creating_menu_scene():
-	print("Создано меню")
+	#print("Создано меню")
 	var menu_scene = preload("res://scenes/menu_scene.tscn") 
 	get_tree().change_scene_to_packed(menu_scene) 
 	
 func _connect_to_menu():
-	print("GSM: Пытаемся найти меню...")
+	#print("GSM: Пытаемся найти меню...")
 	#_creating_menu_scene()
 	await get_tree().tree_changed 
 	await get_tree().process_frame
@@ -39,12 +39,12 @@ func _connect_to_menu():
 			menu.start_button_pressed.disconnect(_on_menu_start_pressed)
 			print("GSM: Старое подключение отключено")
 		menu.start_button_pressed.connect(_on_menu_start_pressed)
-		print("Подключен сигнал")
+		#print("Подключен сигнал")
 	else: 
 		print("Нет сцена меню")
 
 func _on_menu_start_pressed():
-	print("GSM: Получен сигнал старта из меню")
+	#print("GSM: Получен сигнал старта из меню")
 	savings_slots.connect(_connect_to_savings_scene)
 	savings_slots.emit() 
 	savings_slots.emit(State.SAVINGS)
@@ -54,7 +54,7 @@ func _creating_savings_scene():
 	get_tree().change_scene_to_packed(savings_scene) 
 
 func _connect_to_savings_scene():
-	print("GSM: Пытаемся найти выбор слотов...")
+	#print("GSM: Пытаемся найти выбор слотов...")
 	_creating_savings_scene()
 	await get_tree().tree_changed 
 	var savings_scene = get_tree().current_scene
@@ -69,28 +69,25 @@ func _connect_to_savings_scene():
 		print("GSM: нет сцены savings_scene или нет сигнала")
 
 func _on_savings_scene_first_slot_pressed():
-	print("GSM: Получен сигнал, что Выбран первый слот из savings_scene")
 	SaveLoadManager.section_name = "first_slot"
 	load_game()
 	game_started.connect(_connect_to_gameplay)
 	game_started.emit()
 
 func _on_savings_scene_second_slot_pressed():
-	print("GSM: Получен сигнал, что Выбран второй слот из savings_scene")
 	SaveLoadManager.section_name = "second_slot"
 	load_game()
 	game_started.connect(_connect_to_gameplay)
 	game_started.emit()
 
 func _on_savings_scene_third_slot_pressed():
-	print("GSM: Получен сигнал, что Выбран третий слот из savings_scene")
 	SaveLoadManager.section_name = "third_slot"
 	load_game()
 	game_started.connect(_connect_to_gameplay)
 	game_started.emit()
 
 func _creating_change_scene():
-	print("GSM: Создаем gameplay...")
+	#print("GSM: Создаем hange_scene...")
 	var change_scene = preload("res://scenes/change_scene.tscn") 
 	get_tree().change_scene_to_packed(change_scene) 
 	#var gameplay_scene = preload("res://scenes/change_scene.tscn").instantiate()
@@ -103,23 +100,24 @@ func _creating_change_scene():
 	#print("GSM: Загружаем gameplay...")
 	
 func _connect_to_gameplay():
-	print("GSM: Пытаемся найти gameplay...")
+	print("GSM: Пытаемся найти change_scene...")
 	_creating_change_scene()
 	#await get_tree().tree_changed 
 	await get_tree().process_frame
 	# Ищем Player по группе
-	#print("ищем")
 	#var player = get_tree().get_first_node_in_group("player")
 	#if player:
 		#SaveLoadManager.default_position = player.position
 		#print("найден игрок")
+	#else: 
+		#print("игрок не найден")
 	
-	print("GSM: Меняем на gameplay...")
-	var gameplay_scene = get_tree().current_scene
-	if gameplay_scene and gameplay_scene.has_signal("game_started"):
-		print("GSM: Сигнал подключен")
-	else:
-		print("GSM: нет сцены или нет сигнала")
+	#print("GSM: Меняем на change_scene...")
+	#var gameplay_scene = get_tree().current_scene
+	#if gameplay_scene and gameplay_scene.has_signal("game_started"):
+		#print("GSM: Сигнал подключен")
+	#else:
+		#print("GSM: нет сцены или нет сигнала")
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel") and get_tree().current_scene.name != "SavingsScene" and get_tree().current_scene.name != "Menu":
@@ -133,12 +131,10 @@ func _input(event):
 			game_paused.emit(State.PAUSE)
 
 func _creating_pause_scene():
-	print("GSM: Создаем сцену паузы")
 	var pause_scene = load("res://scenes/pause_scene.tscn").instantiate()
 	return pause_scene
 
 func _connect_to_pause_scene():
-	print("GSM: Пытаемся найти сцену паузы...")
 	get_tree().paused = true
 	var pause_scene = _creating_pause_scene()
 	#pause_scene.z_index = 15
@@ -151,24 +147,22 @@ func _connect_to_pause_scene():
 	if pause_scene:
 		pause_scene.resume_button_pressed.connect(_on_resume_button_pressed.bind(pause_scene))
 		pause_scene.exit_to_menu_button_pressed.connect(_on_exit_to_menu_button_pressed.bind(pause_scene))
-		print("GSM: Сигнал подключен")
+		#print("GSM: Сигнал подключен")
 	else:
 		print("GSM: нет сцены или нет сигнала")
 
 func _on_resume_button_pressed(pause_scene):
 	get_tree().paused = false
-	print("GSM: Получен сигнал, что нажата кнопка resume_button_pressed")
 	pause_scene.queue_free()
 	game_started.emit(State.GAMEPLAY)
 
 func _on_exit_to_menu_button_pressed(pause_scene):
 	get_tree().paused = false
 	pause_scene.queue_free()
-	print("GSM: Получен сигнал, что нажата кнопка exit_to_menu_button_pressed")
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		SaveLoadManager.position = player.position
-		print("Позиция игрока сохранена: ", player.position)
+		print("Позиция b игрока сохранена: ", player.position)
 	else:
 		print("Player не найден")	
 	SaveLoadManager.save_game()

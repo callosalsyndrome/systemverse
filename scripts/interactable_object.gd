@@ -20,18 +20,18 @@ func _input(event):
 		handle_interaction()
 	
 func handle_interaction():
-	print("Взаимодействие с объектом:", name)
+	#print("Взаимодействие с объектом:", name)
 	interaction_started.emit(self)
 	perform_interaction()
 	
 func perform_interaction(): #переопределяется для дочерних классов
-	print("Взаимодействие с ", name)
+	#print("Взаимодействие с ", name)
 	interaction_triggered.emit()
 
 func _on_body_entered(body: Node):
 	# Проверяем, что вошел игрок (по имени или группе)
 	if body.is_in_group("player") or body.name == "Player":
-		print("Игрок вошел в зону взаимодействия: ", name)
+		#print("Игрок вошел в зону взаимодействия: ", name)
 		
 		# Отправляем сигнал в GameStateManager
 		player_entered_interaction_zone.emit(name)
@@ -45,7 +45,7 @@ func _on_body_entered(body: Node):
 func _on_body_exited(body: Node):
 	# Проверяем, что вышел игрок
 	if body.is_in_group("player") or body.name == "Player":
-		print("Игрок вышел из зоны взаимодействия: ", name)
+		#print("Игрок вышел из зоны взаимодействия: ", name)
 		
 	# Отправляем сигнал в GameStateManager
 		player_exited_interaction_zone.emit(name)

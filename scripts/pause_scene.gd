@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-# просто открывается поверх геймплея
 @onready var resume_button: Button = $Control/resume_button
 @onready var exit_to_menu_button: Button = $Control/exit_to_menu_button
 
@@ -8,8 +7,7 @@ signal resume_button_pressed
 signal exit_to_menu_button_pressed
 
 func _ready():
-	print("PS: Я - ", name)
-	print("Pause scene visible: ", visible)
+	#print("PS: Я - ", name)
 	
 	var control_node = $Control
 	var camera = get_viewport().get_camera_2d()
@@ -25,10 +23,8 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 func _on_resume_button_pressed() -> void:
-	print("Нажата кнопка Продолжить")
 	resume_button_pressed.emit()
 
 func _on_exit_to_menu_button_pressed() -> void:
-	print("Нажата кнопка Выйти")
 	get_tree().paused = false
 	exit_to_menu_button_pressed.emit()

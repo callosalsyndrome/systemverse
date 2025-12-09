@@ -1,12 +1,5 @@
 extends Node2D
 
-# сцена сохранений открывается после нажатия кнопки "начать игру"
-# содержит в сете 3 слота сохранений
-# после выбора слота уже начинается игра
-# пока хз как реализовать
-
-# сцена содержит в себе сцену слота сохранения - у нее отдельный скрипт. 
-# менять каждый слот придется через код, но они будут сохранять общие свойства, которые описаны в сцене save_slot
 @onready var save_slot_1: Button = $SaveSlot
 @onready var save_slot_2: Button = $SaveSlot2
 @onready var save_slot_3: Button = $SaveSlot3
@@ -15,9 +8,9 @@ signal first_slot_selected()
 signal second_slot_selected()
 signal third_slot_selected()
 
-signal delete_first_slot_selected()
-signal delete_second_slot_selected
-signal delete_third_slot_selected
+#signal delete_first_slot_selected()
+#signal delete_second_slot_selected()
+#signal delete_third_slot_selected()
 
 func _ready():
 	print("SVS: Я - ", name)
@@ -26,7 +19,6 @@ func _ready():
 	save_slot_2.pressed.connect(_on_second_slot_selected)
 	save_slot_3.pressed.connect(_on_third_slot_selected)
 	
-	#save_slot_1.get_node("Button").pressed.connect(_on_delete_first_slot_selected)
 	var button_1 = get_node("SaveSlot/DeleteButton")
 	button_1.pressed.connect(_on_delete_first_slot_selected)
 	var button_2 = get_node("SaveSlot2/DeleteButton")
@@ -35,15 +27,12 @@ func _ready():
 	button_3.pressed.connect(_on_delete_third_slot_selected)
 
 func _on_first_slot_selected() -> void:
-	print("SVS: Эмитим (выполняем) сигнал first_slot_selected")
 	first_slot_selected.emit()
 	
 func _on_second_slot_selected() -> void:
-	print("SVS: Эмитим (выполняем) сигнал second_slot_selected")
 	second_slot_selected.emit()
 	
 func _on_third_slot_selected() -> void:
-	print("SVS: Эмитим (выполняем) сигнал third_slot_selected")
 	third_slot_selected.emit()
 
 func _on_delete_first_slot_selected() -> void:
@@ -58,6 +47,5 @@ func _on_delete_second_slot_selected() -> void:
 	
 func _on_delete_third_slot_selected() -> void:
 	print("SVS: Эмитим (выполняем) сигнал _on_delete_third_slot_selected")
-	delete_third_slot_selected.emit()
 	SaveLoadManager.section_name = "third_slot" 
 	SaveLoadManager.delete_section()

@@ -1,7 +1,6 @@
 extends Node
 
 var position
-var rotation # поворот
 var count_scene
 var current_scene_name
 var section_name
@@ -34,9 +33,28 @@ func delete_section() -> void:
 	#config2.load(path_to_save_file)
 	#config2.erase_section(section_name)
 	#config2.save(path_to_save_file)
-	print("3. Попытка удаления завершена")
-	
+	var config2 = ConfigFile.new()
+	# Проверяем, существует ли файл
+	if not FileAccess.file_exists(path_to_save_file):
+		print("Файл конфигурации не существует")
+		return
+	# Загружаем файл
+	var error = config2.load(path_to_save_file)
+	if error != OK:
+		print("Ошибка загрузки файла:", error_string(error))
+		return
+	var section_to_remove = section_name
+	# Проверяем, существует ли секция
+	if config2.has_section(section_to_remove):
+		# Удаляем секцию
+		config2.erase_section(section_to_remove)
+		# Сохраняем изменения
+		config2.save(path_to_save_file)
+		print("Секция '", section_to_remove, "' удалена")
+	else:
+		print("Секция '", section_to_remove, "' не существует")
 	
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		print("закрытие")
 		save_game()
