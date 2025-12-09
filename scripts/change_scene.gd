@@ -11,15 +11,35 @@ func _ready() -> void:
 	print("CS: Я - ", name)
 	add_to_group("player_ready_listeners")
 	current_world.connect("world_changed", handle_world_changed)
-	match SaveLoadManager.current_scene_name:
-		"lab_gameplay_scene":
-			last_world_name = "gameplay_scene" 
-		"lab_lift_gameplay_scene":
-			last_world_name = "lab_gameplay_scene"
+	#match SaveLoadManager.current_scene_name:
+		#"lab_gameplay_scene":
+			#next_world = load("res://scenes/" + SaveLoadManager.current_scene_name + ".tscn").instantiate()
+			#next_world.z_index = -10
+			#await animation_player.animation_finished
+			#add_child(next_world) 
+			#next_world.connect("world_changed", handle_world_changed)
+			#current_world.queue_free()
+			#current_world = next_world
+			#current_world.z_index = 0
+		#"lab_lift_gameplay_scene":
+			#last_world_name = "lab_gameplay_scene"
+		#"hton_scene":
+			#last_world_name = "lab_lift_gameplay_scene"
 		#_:
 			#return
+	if SaveLoadManager.flag == false:
+		next_world = load("res://scenes/" + SaveLoadManager.current_scene_name + ".tscn").instantiate()
+		next_world.z_index = -10
+		add_child(next_world) 
+		next_world.connect("world_changed", handle_world_changed)
+		current_world.queue_free()
+		current_world = next_world
+		current_world.z_index = 0
+		current_world.name = SaveLoadManager.current_scene_name
+		SaveLoadManager.flag = true
 	if SaveLoadManager.current_scene_name != "gameplay_scene":
-		handle_world_changed(last_world_name)
+		#handle_world_changed(last_world_name)
+		print()
 	elif SaveLoadManager.current_scene_name == "gameplay_scene":
 		var player = get_tree().get_first_node_in_group("player")
 		if SaveLoadManager.position != null:
@@ -34,6 +54,9 @@ func _ready() -> void:
 
 func _on_player_ready(player: Node):
 	if SaveLoadManager.position != null:
+		if SaveLoadManager.flag:
+				SaveLoadManager.position = player.position
+				print("Позиция Г игрока сохранена: ", player.position)
 		print("Позиция з игрока установлена: ", player.position)
 		player.position = SaveLoadManager.position
 		print("Позиция з1 игрока установлена: ", player.position)
@@ -49,8 +72,11 @@ func handle_world_changed(current_world_name: String):
 			next_world_name = "lab_lift_gameplay_scene"
 		"LabGameplayScene":
 			next_world_name = "lab_lift_gameplay_scene"
-		_:
-			return
+		"lab_lift_gameplay_scene":
+			next_world_name = "hton_scene"
+		"LabLiftGameplayScene":
+			next_world_name = "hton_scene"
+			
 	
 	next_world = load("res://scenes/" + next_world_name + ".tscn").instantiate()
 	next_world.z_index = -10
@@ -76,10 +102,11 @@ func _on_animation_player_animation_started(anim_name: StringName) -> void:
 			current_world.z_index = 0
 			
 			SaveLoadManager.current_scene_name = next_world_name
-			#var player = get_tree().get_first_node_in_group("player")
+			var player = get_tree().get_first_node_in_group("player")
+			SaveLoadManager.flag = true
 			#if SaveLoadManager.position != null:
 				#player.position = SaveLoadManager.position
-			#if player:
+			#if next_world_name != SaveLoadManager.current_scene_name:
 				#SaveLoadManager.position = player.position
 				#print("Позиция Г игрока сохранена: ", player.position)
 			#else:

@@ -4,10 +4,10 @@ extends CharacterBody2D
 # доступно взаимодействие с предметами. 
 
 
-signal player_initiated_dialogue() #диалог с нпс или взаимодействие с предметом
-signal player_initiated_cutscene()
-signal player_initiated_combat()
-signal checkpoint_reached()
+#signal player_initiated_dialogue() #диалог с нпс или взаимодействие с предметом
+#signal player_initiated_cutscene()
+#signal player_initiated_combat()
+#signal checkpoint_reached()
 
 @export var speed: int = 150
 var last_direction = ""
@@ -17,8 +17,20 @@ func _ready() -> void:
 	add_to_group("player")
 	# Сигнализируем что Player готов
 	get_tree().call_group("player_ready_listeners", "_on_player_ready", self)
+var is_being_carried = false  #переносит ли лифт игрока
 
 func _physics_process(_delta):
+	
+	#отключаем управление в лифте
+	if is_being_carried:
+		#чтобы красиво стоял в лифе
+		$AnimatedSprite2D.animation = "diagonal_down"
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 1
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	var input_direction = Vector2.ZERO
 	is_moving = false
 	
@@ -91,8 +103,17 @@ func _physics_process(_delta):
 	if input_direction.length() > 0:
 		input_direction = input_direction.normalized()
 	
+	if Input.is_action_pressed("speed"):
+		speed = 250
+	else:
+		speed = 150
+	
 	# Двигаем персонажа
-	position += input_direction * speed * _delta
+	#position += input_direction * speed * _delta #ЛОМАЕТ ВСЮ ФИЗИКУ СТОЛКНОВЕНИЙ
+
+	
+	velocity = input_direction * speed
+	move_and_slide()
 	
 	#попытка в остановку анимации
 	if not is_moving:
@@ -135,5 +156,3 @@ func _physics_process(_delta):
 				$AnimatedSprite2D.animation = "diagonal_down"
 				$AnimatedSprite2D.stop()
 				$AnimatedSprite2D.frame = 1
-	
-	

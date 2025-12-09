@@ -13,6 +13,7 @@ signal returning_to_main_menu()
 func _ready():
 	_connect_to_menu() 
 
+
 func save_game() -> void:
 	SaveLoadManager.save_game()
 	

@@ -25,3 +25,4 @@ func _on_interactable_object_player_entered_interaction_zone(_object_name: Varia
 	entered = true
 func _on_interactable_object_player_exited_interaction_zone(_object_name: Variant) -> void:
 	entered = false
+	

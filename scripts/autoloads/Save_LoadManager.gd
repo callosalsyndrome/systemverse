@@ -4,6 +4,7 @@ var position
 var count_scene
 var current_scene_name
 var section_name
+var flag
 
 var default_position = null
 
@@ -26,6 +27,7 @@ func load_game() -> void:
 	
 	position = config.get_value(section_name, "position", default_position)
 	current_scene_name = config.get_value(section_name, "current_scene_name", "gameplay_scene")
+	flag = false
 	print("Игра загружена!")
 
 func delete_section() -> void: 

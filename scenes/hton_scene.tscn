@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=4 uid="uid://b2uafauftgwwg"]
+[gd_scene load_steps=17 format=4 uid="uid://bnaf1uek5adfk"]
 
-[ext_resource type="Texture2D" uid="uid://dbjpvaqoa5xyj" path="res://assets/sprites/сцена хтони/idk.png" id="1_jgi0m"]
 [ext_resource type="Texture2D" uid="uid://cfxo3ddvy715a" path="res://assets/sprites/сцена хтони/glass.png" id="2_uwihb"]
 [ext_resource type="Texture2D" uid="uid://bfq8a60qseurg" path="res://assets/sprites/сцена хтони/hton.png" id="3_ugr4p"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="4_obiot"]
 [ext_resource type="Texture2D" uid="uid://h6kxmot0wwg7" path="res://assets/sprites/tiles/спрайты2.png" id="5_00dbh"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="6_kctja"]
 [ext_resource type="PackedScene" uid="uid://dwmecplqajte3" path="res://scenes/interactable_object.tscn" id="7_uwihb"]
+[ext_resource type="Texture2D" uid="uid://b1u67wfoq3lum" path="res://assets/sprites/aaaaaaaaaaaaa.png" id="8_ugr4p"]
+[ext_resource type="Texture2D" uid="uid://822lsu0fw5eu" path="res://assets/sprites/сцена хтони/screens.png" id="9_00dbh"]
+[ext_resource type="Texture2D" uid="uid://n133p5lylw23" path="res://assets/sprites/сцена хтони/bottom.png" id="10_kctja"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mvhas"]
 vertices = PackedVector2Array(32, 0, 0, 16, -32, 0, 0, -16)
@@ -382,12 +384,16 @@ sources/0 = SubResource("TileSetAtlasSource_jgi0m")
 sources/1 = SubResource("TileSetAtlasSource_uwihb")
 sources/2 = SubResource("TileSetAtlasSource_ugr4p")
 
-[node name="HtonScene" type="Node2D"]
+[sub_resource type="Gradient" id="Gradient_uwihb"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[node name="Idk" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(1400, -72)
-texture = ExtResource("1_jgi0m")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ugr4p"]
+gradient = SubResource("Gradient_uwihb")
+fill = 1
+fill_from = Vector2(0.5132743, 0.49557522)
+fill_to = Vector2(0.30530974, 0.07964602)
+
+[node name="HtonScene" type="Node2D"]
 
 [node name="Glass" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.34509805)
@@ -395,27 +401,167 @@ z_index = 5
 position = Vector2(1400, -72)
 texture = ExtResource("2_uwihb")
 
-[node name="Hton" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0.016666412, 0.39607844)
-position = Vector2(1404, -81)
-texture = ExtResource("3_ugr4p")
+[node name="LabTileMap_desk_front" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(4, 0)
+tile_map_data = PackedByteArray("AAAQAA0AAgAOAAkAAAA=")
+tile_set = SubResource("TileSet_djwkl")
 
 [node name="LabTileMap_things" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAADABIAAQAEABAAAAAEABAAAQAEABAAAAAFAA4AAQAEABAAAAAAAAwAAQAEABAAAAABAAoAAQAEABAAAAACAAgAAQAEABAAAAAKACMAAQAeAB8AAAALACEAAQAeAB8AAAAMAB8AAQAeAB8AAAANACkAAQAeAB8AAAAOACcAAQAeAB8AAAAPACUAAQAeAB8AAAAKAP//AgAIAAkAAAAMAP7/AgARAAkAAAAQAA0AAgAOAAkAAAAIAP7/AgAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAADABIAAQAEABAAAAAEABAAAQAEABAAAAAFAA4AAQAEABAAAAAAAAwAAQAEABAAAAABAAoAAQAEABAAAAACAAgAAQAEABAAAAAKACMAAQAeAB8AAAALACEAAQAeAB8AAAAMAB8AAQAeAB8AAAANACkAAQAeAB8AAAAOACcAAQAeAB8AAAAPACUAAQAeAB8AAAAKAP//AgAIAAkAAAAMAP7/AgARAAkAAAA=")
 tile_set = SubResource("TileSet_djwkl")
 
 [node name="LabTileMap_up" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(1, 0)
-tile_map_data = PackedByteArray("AAAHABUAAgAAAA4AAAAIABYAAgAAAAoAAAAIABcAAgAAAAoAAAAJABgAAgAAAAoAAAAJABkAAgAAAAoAAAAKABoAAgAAAAoAAAAKABsAAgAEAA4AAAAHABYAAgACAA4AAAAHABcAAgAAAAoAAAAIABgAAgAAAAoAAAAIABkAAgAAAAoAAAAJABoAAgAAAAoAAAAJABsAAgAAAAoAAAAKABwAAgAGAAoAAAAGABcAAgAAAAoAAAAHABgAAgAAAAoAAAAHABkAAgAAAAoAAAAHABoAAgAAAAoAAAAHABsAAgAAAAoAAAAIABoAAgAAAAoAAAAIABsAAgAAAAoAAAAJABwAAgAAAAoAAAAJAB0AAgAAAAoAAAAJAB4AAgAEAA4AAAAIAB0AAgAAAAoAAAAIABwAAgAAAAoAAAAGABkAAgAAAAoAAAAGABgAAgAAAA4AAAAFABkAAgAEAAoAAAAGABoAAgAAAAoAAAAGABsAAgAAAAoAAAAHABwAAgAAAAoAAAAHAB0AAgAAAAoAAAAIAB4AAgAAAAoAAAAIAB8AAgAEAAoAAAAIACAAAgACAA4AAAAHAB8AAgACAAoAAAAHAB4AAgACAAoAAAAGAB0AAgACAAoAAAAGABwAAgACAAoAAAAFABsAAgACAAoAAAAFABoAAgAGAAoAAAAGABYAAgAAAAoAAAAFABcAAgACAAoAAAAEABgAAgAEAAoAAAAEABcAAgAEAAoAAAAFABYAAgAEAA4AAAAFABUAAgAAAAoAAAAGABQAAgAGAAoAAAAGABMAAgAEAAoAAAAGABIAAgAAAAoAAAAFABEAAgAAAAoAAAAFABAAAgAAAAoAAAAEABEAAgAAAAoAAAAEABIAAgAAAAoAAAADABEAAgAAAAoAAAADABIAAgAAAAoAAAACABMAAgAAAAoAAAADABQAAgAAAAoAAAACABUAAgAAAAoAAAADABYAAgAAAAoAAAADABcAAgAAAAoAAAADABUAAgAAAAoAAAADABMAAgAAAAoAAAAEABQAAgAAAAoAAAAEABMAAgAAAAoAAAAEABUAAgAAAAoAAAAEABYAAgAAAAoAAAAFABQAAgAAAAoAAAAFABMAAgAAAAoAAAAFABIAAgAAAAoAAAAEAA8AAgAAAAoAAAAEABAAAgAAAAoAAAACABQAAgAAAAoAAAAJAB8AAgACAAoAAAAKAB4AAgAAAAoAAAAJACIAAgAEAAoAAAAJACEAAgAEAAoAAAAKACAAAgAAAAoAAAAKAB8AAgAAAAoAAAALAB4AAgACAA4AAAALAB0AAgAEAAoAAAAJACMAAgAAAAoAAAAKACIAAgAAAAoAAAAKACEAAgAAAAoAAAALACAAAgAAAAoAAAALAB8AAgAAAAoAAAAMAB4AAgAAAAoAAAAKACQAAgAAAAoAAAAKACMAAgAAAAoAAAALACIAAgAAAAoAAAALACEAAgAAAAoAAAAMACAAAgAAAAoAAAAMAB8AAgAAAAoAAAAKACUAAgAAAAoAAAALACQAAgAAAAoAAAALACMAAgAAAAoAAAAMACIAAgAAAAoAAAAMACEAAgAAAAoAAAANACAAAgAAAAoAAAALACYAAgAAAAoAAAALACUAAgAAAAoAAAAMACQAAgAAAAoAAAAMACMAAgAAAAoAAAANACIAAgAAAAoAAAANACEAAgAAAAoAAAAMACUAAgAAAAoAAAANACQAAgAAAAoAAAAMACgAAgAAAAoAAAAMACcAAgAAAAoAAAANACYAAgAAAAoAAAANACUAAgAAAAoAAAAOACYAAgAAAAoAAAAOACQAAgAAAAoAAAAOACMAAgAAAAoAAAAMACkAAgAAAAoAAAANACgAAgAAAAoAAAANACcAAgAAAAoAAAAOACUAAgAAAAoAAAAPACQAAgAAAAoAAAANACoAAgAAAAoAAAANACkAAgAAAAoAAAAOACgAAgAAAAoAAAAOACcAAgAAAAoAAAAPACYAAgAAAAoAAAAPACcAAgAAAAoAAAAQACYAAgAAAAoAAAAPACUAAgAAAAoAAAANACsAAgAAAAoAAAAOACoAAgAAAAoAAAAOACkAAgAAAAoAAAAPACgAAgAAAAoAAAAOACwAAgAAAAoAAAAOACsAAgAAAAoAAAAPACoAAgAAAAoAAAAPACkAAgAAAAoAAAAQACgAAgAAAAoAAAAQACcAAgAAAAoAAAACABEAAgAAAAoAAAADABAAAgAAAAoAAAABABIAAgAAAAoAAAABABEAAgAAAAoAAAACABAAAgAAAAoAAAACAA8AAgAAAAoAAAADAA4AAgAAAAoAAAADAA0AAgAAAAoAAAADAAwAAgAAAAoAAAACAAsAAgAAAAoAAAACAAoAAgAAAAoAAAABAAkAAgAAAAoAAAABAAoAAgAAAAoAAAAAAAsAAgAAAAoAAAAAAAwAAgAAAAoAAAD//w0AAgAAAAoAAAD//w4AAgAAAAoAAAD//w8AAgAAAAoAAAAAABAAAgAAAAoAAAAAABEAAgAAAAoAAAABABAAAgAAAAoAAAAAAA8AAgAAAAoAAAAAAA4AAgAAAAoAAAAAAA0AAgAAAAoAAAABAAwAAgAAAAoAAAABAAsAAgAAAAoAAAACAAwAAgAAAAoAAAABAA0AAgAAAAoAAAABAA4AAgAAAAoAAAABAA8AAgAAAAoAAAACAA4AAgAAAAoAAAACAA0AAgAAAAoAAAAFAA4AAgAAAAoAAAAFAA8AAgAAAAoAAAAGABAAAgAAAAoAAAAGABEAAgAAAAoAAAAHABIAAgAEAAoAAAACAAgAAgAAAAoAAAACAAkAAgAAAAoAAAADAAoAAgAAAAoAAAADAAsAAgAAAAoAAAAEAAwAAgAAAAoAAAAMABwAAgAEAAoAAAAMAB0AAgAAAAoAAAANAB4AAgAAAAoAAAANAB8AAgAAAAoAAAAOACAAAgAAAAoAAAAPACIAAgAAAAoAAAAPACMAAgAAAAoAAAAQACQAAgAAAAoAAAAQACUAAgAAAAoAAAARACYAAgAAAAoAAAAGABUAAgACAAoAAAAKAB0AAgACAAoAAAA=")
+tile_map_data = PackedByteArray("AAAHABUAAgAAAA4AAAAIABYAAgAAAAoAAAAIABcAAgAAAAoAAAAJABgAAgAAAAoAAAAJABkAAgAAAAoAAAAKABoAAgAAAAoAAAAKABsAAgAEAA4AAAAHABYAAgACAA4AAAAHABcAAgAAAAoAAAAIABgAAgAAAAoAAAAIABkAAgAAAAoAAAAJABoAAgAAAAoAAAAJABsAAgAAAAoAAAAKABwAAgAGAAoAAAAGABcAAgAAAAoAAAAHABgAAgAAAAoAAAAHABkAAgAAAAoAAAAHABoAAgAAAAoAAAAHABsAAgAAAAoAAAAIABoAAgAAAAoAAAAIABsAAgAAAAoAAAAJABwAAgAAAAoAAAAJAB0AAgAAAAoAAAAJAB4AAgAEAA4AAAAIAB0AAgAAAAoAAAAIABwAAgAAAAoAAAAGABkAAgAAAAoAAAAGABgAAgAAAA4AAAAFABkAAgAEAAoAAAAGABoAAgAAAAoAAAAGABsAAgAAAAoAAAAHABwAAgAAAAoAAAAHAB0AAgAAAAoAAAAIAB4AAgAAAAoAAAAIAB8AAgAEAAoAAAAIACAAAgACAA4AAAAHAB8AAgACAAoAAAAHAB4AAgACAAoAAAAGAB0AAgACAAoAAAAGABwAAgACAAoAAAAFABsAAgACAAoAAAAFABoAAgAGAAoAAAAGABYAAgAAAAoAAAAFABcAAgACAAoAAAAEABgAAgAEAAoAAAAEABcAAgAEAAoAAAAFABYAAgAEAA4AAAAFABUAAgAAAAoAAAAGABQAAgAGAAoAAAAGABMAAgAEAAoAAAAGABIAAgAAAAoAAAAFABEAAgAAAAoAAAAFABAAAgAAAAoAAAAEABEAAgAAAAoAAAAEABIAAgAAAAoAAAADABEAAgAAAAoAAAADABIAAgAAAAoAAAACABMAAgAAAAoAAAADABQAAgAAAAoAAAACABUAAgAAAAoAAAADABYAAgAAAAoAAAADABcAAgAAAAoAAAADABUAAgAAAAoAAAADABMAAgAAAAoAAAAEABQAAgAAAAoAAAAEABMAAgAAAAoAAAAEABUAAgAAAAoAAAAEABYAAgAAAAoAAAAFABQAAgAAAAoAAAAFABMAAgAAAAoAAAAFABIAAgAAAAoAAAAEAA8AAgAAAAoAAAAEABAAAgAAAAoAAAACABQAAgAAAAoAAAAJAB8AAgACAAoAAAAKAB4AAgAAAAoAAAAJACIAAgAEAAoAAAAJACEAAgAEAAoAAAAKACAAAgAAAA4AAAAKAB8AAgAAAAoAAAALAB4AAgACAA4AAAALAB0AAgAEAAoAAAAJACMAAgAAAAoAAAAKACIAAgAAAAoAAAAKACEAAgAAAAoAAAALACAAAgAAAAoAAAALAB8AAgAAAAoAAAAMAB4AAgAAAAoAAAAKACQAAgAAAAoAAAAKACMAAgAAAAoAAAALACIAAgAAAAoAAAALACEAAgAAAAoAAAAMACAAAgAAAAoAAAAMAB8AAgAAAAoAAAAKACUAAgAAAAoAAAALACQAAgAAAAoAAAALACMAAgAAAAoAAAAMACIAAgAAAAoAAAAMACEAAgAAAAoAAAANACAAAgAAAAoAAAALACYAAgAAAAoAAAALACUAAgAAAAoAAAAMACQAAgAAAAoAAAAMACMAAgAAAAoAAAANACIAAgAAAAoAAAANACEAAgAAAAoAAAAMACUAAgAAAAoAAAANACQAAgAAAAoAAAAMACgAAgAAAAoAAAAMACcAAgAAAAoAAAANACYAAgAAAAoAAAANACUAAgAAAAoAAAAOACYAAgAAAAoAAAAOACQAAgAAAAoAAAAOACMAAgAAAAoAAAAMACkAAgAAAAoAAAANACgAAgAAAAoAAAANACcAAgAAAAoAAAAOACUAAgAAAAoAAAAPACQAAgAAAAoAAAANACoAAgAAAAoAAAANACkAAgAAAAoAAAAOACgAAgAAAAoAAAAOACcAAgAAAAoAAAAPACYAAgAAAAoAAAAPACcAAgAAAAoAAAAQACYAAgAAAAoAAAAPACUAAgAAAAoAAAANACsAAgAAAAoAAAAOACoAAgAAAAoAAAAOACkAAgAAAAoAAAAPACgAAgAAAAoAAAAOACwAAgAAAAoAAAAOACsAAgAAAAoAAAAPACoAAgAAAAoAAAAPACkAAgAAAAoAAAAQACgAAgAAAAoAAAAQACcAAgAAAAoAAAACABEAAgAAAAoAAAADABAAAgAAAAoAAAABABIAAgAAAAoAAAABABEAAgAAAAoAAAACABAAAgAAAAoAAAACAA8AAgAAAAoAAAADAA4AAgAAAAoAAAADAA0AAgAAAAoAAAADAAwAAgAAAAoAAAACAAsAAgAAAAoAAAACAAoAAgAAAAoAAAABAAkAAgAAAAoAAAABAAoAAgAAAAoAAAAAAAsAAgAAAAoAAAAAAAwAAgAAAAoAAAD//w0AAgAAAAoAAAD//w4AAgAAAAoAAAD//w8AAgAAAAoAAAAAABAAAgAAAAoAAAAAABEAAgAAAAoAAAABABAAAgAAAAoAAAAAAA8AAgAAAAoAAAAAAA4AAgAAAAoAAAAAAA0AAgAAAAoAAAABAAwAAgAAAAoAAAABAAsAAgAAAAoAAAACAAwAAgAAAAoAAAABAA0AAgAAAAoAAAABAA4AAgAAAAoAAAABAA8AAgAAAAoAAAACAA4AAgAAAAoAAAACAA0AAgAAAAoAAAAFAA4AAgAAAAoAAAAFAA8AAgAAAAoAAAAGABAAAgAAAAoAAAAGABEAAgAAAAoAAAAHABIAAgAEAAoAAAACAAgAAgAAAAoAAAACAAkAAgAAAAoAAAADAAoAAgAAAAoAAAADAAsAAgAAAAoAAAAEAAwAAgAAAAoAAAAMABwAAgAEAAoAAAAMAB0AAgAAAAoAAAANAB4AAgAAAAoAAAANAB8AAgAAAAoAAAAOACAAAgAAAAoAAAAPACIAAgAAAAoAAAAPACMAAgAAAAoAAAAQACQAAgAAAAoAAAAQACUAAgAAAAoAAAARACYAAgAAAAoAAAAGABUAAgACAAoAAAAKAB0AAgACAAoAAAA=")
 tile_set = SubResource("TileSet_djwkl")
 
 [node name="Player" parent="." instance=ExtResource("6_kctja")]
-position = Vector2(484, 443)
+position = Vector2(482.99997, 434.99997)
+scale = Vector2(0.50314784, 0.50314784)
 
 [node name="InteractableObject" parent="." instance=ExtResource("7_uwihb")]
 position = Vector2(1402, -186)
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting"]
+position = Vector2(39, 222.99998)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lighting"]
+rotation = 4.7577677
+color = Color(0.2734375, 0.08916438, 0.1248302, 0.44705883)
+energy = 3.3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.7490196)
+shadow_filter = 1
+shadow_filter_smooth = 12.5
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Lighting"]
+color = Color(0.6764517, 0.53434, 0.76171875, 1)
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lighting"]
+position = Vector2(102, 197.00002)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lighting"]
+position = Vector2(167, 163.00002)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lighting"]
+position = Vector2(224.49998, 305.74997)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lighting"]
+position = Vector2(287.5, 279.75)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lighting"]
+position = Vector2(352.5, 245.75)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lighting"]
+position = Vector2(697.49994, 547.75)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lighting"]
+position = Vector2(760.49994, 521.75)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Lighting"]
+position = Vector2(825.49994, 487.75)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Lighting"]
+position = Vector2(897.49994, 631.75)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Lighting"]
+position = Vector2(960.49994, 605.75)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Lighting"]
+position = Vector2(1025.5, 571.75)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Lighting"]
+position = Vector2(912, -263)
+rotation = -0.393253
+scale = Vector2(4.085938, 3.0117188)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D14" type="PointLight2D" parent="Lighting"]
+position = Vector2(1114, -328.00003)
+rotation = -0.393253
+scale = Vector2(4.085938, 3.0117188)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D15" type="PointLight2D" parent="Lighting"]
+position = Vector2(1285, 150)
+rotation = -0.393253
+scale = Vector2(4.085938, 3.0117188)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D16" type="PointLight2D" parent="Lighting"]
+position = Vector2(1542, -228.00005)
+rotation = 0.42907867
+scale = Vector2(4.085938, 3.0117188)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="PointLight2D17" type="PointLight2D" parent="Lighting"]
+position = Vector2(1450, -199.99998)
+rotation = 0.4372694
+scale = Vector2(7.2358785, 1.7229829)
+texture = SubResource("GradientTexture2D_ugr4p")
+
+[node name="sprites" type="Sprite2D" parent="."]
+
+[node name="Bottom" type="Sprite2D" parent="sprites"]
+position = Vector2(1401, -72)
+texture = ExtResource("10_kctja")
+
+[node name="Screens" type="Sprite2D" parent="sprites"]
+z_index = 5
+position = Vector2(1403, -70)
+texture = ExtResource("9_00dbh")
+
+[node name="Aaaaaaaaaaaaa" type="Sprite2D" parent="sprites"]
+z_index = 3
+position = Vector2(1397, -68)
+texture = ExtResource("8_ugr4p")
+
+[node name="Hton" type="Sprite2D" parent="sprites"]
+modulate = Color(1, 0, 0.016666412, 0.39607844)
+position = Vector2(1404, -81)
+texture = ExtResource("3_ugr4p")
+
+[node name="InteractableObject2" parent="." instance=ExtResource("7_uwihb")]
+position = Vector2(1081, -3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(321, 432, 507, 339, 541, 335, 567, 322, 580, 307, 588, 282, 589, 261, 586, 229, 642, 144, 642, 61, 662, 41, 674, 16, 691, 24, 750, -7, 787, 9, 847, -23, 840, -44, 873, -51, 888, -154, 1058, -241, 1315, -241, 1568, -113, 1568, 29, 1219, 209, 1180, 189, 1114, 201, 1052, 233, 1044, 227, 1014, 208, 972, 199, 915, 209, 865, 254, 788, 371, 758, 379, 740, 393, 732, 411, 731, 430, 726, 439, 724, 454, 610, 512, 545, 544, 321, 432, 320, 432, 545, 547, 727, 458, 733, 432, 749, 390, 787, 375, 866, 257, 971, 206, 1051, 240, 1116, 206, 1177, 197, 1217, 213, 1571, 31, 1572, -116, 1314, -244, 1056, -244, 884, -156, 871, -54, 835, -47, 843, -26, 786, 6, 749, -10, 691, 21, 672, 12, 637, 63, 638, 143, 583, 228, 586, 273, 575, 307, 545, 329, 504, 336, 320, 432)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1069, -20, 1086, -2, 1111, 8, 1156, 10, 1201, -1, 1217, -18, 1269, -70, 1207, -111, 1168, -123, 1134, -125, 1087, -113, 1069, -94)

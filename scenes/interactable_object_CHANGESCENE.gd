@@ -9,4 +9,4 @@ func perform_interaction(): #переопределяется для дочер�
 	#print("Взаимодействие с ", name)
 	interaction_triggered.emit()
 
-# оно вообще не запускается лол.
+# оно вообще не запускается лол. 

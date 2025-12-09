@@ -297,6 +297,3 @@ gravity = Vector2(0, 100)
 initial_velocity_min = 15.0
 initial_velocity_max = 25.0
 color = Color(0.558134, 0.995251, 1, 1)
-
-[connection signal="player_entered_interaction_zone" from="InteractableObject" to="." method="_on_interactable_object_player_entered_interaction_zone"]
-[connection signal="player_exited_interaction_zone" from="InteractableObject" to="." method="_on_interactable_object_player_exited_interaction_zone"]
