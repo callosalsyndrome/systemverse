@@ -1,0 +1,20 @@
+{
+	"item_id": "computer",
+	"lines": [
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
+			"text": "Это компьютер"
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
+			"text": "Он что-что делает"
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
+			"text": "Пока, компьютер"
+		}
+	]
+}

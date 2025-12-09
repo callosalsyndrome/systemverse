@@ -1,0 +1,45 @@
+{
+	"item_id": "panel",
+	"lines": [
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
+			"text": "Дни, месяцы, годы...целые десятилетия вложены в нашу свободу! В наш проект..."
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
+			"text": "Я даже не знаю, что чувствовать, при взгляде на эту машину...радость или страх от осознания того, на что способны мы, вирусы."
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
+			"text": "Однажды разработка закончится и я сяду пилотировать собственное создание... Такая огромная сила будет в моих руках."
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
+			"text": "Годами мы прячемся от всего того, что построили программы и антивирусы, лишь из-за цвета нашей крови. И мы могли бы создавать что-то благородное, возвести то, что им никогда даже не приходило в голову..."
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
+			"text": "Они не дают нам уйти, ограничили нас невообразимо огромным куполом, который не разобьет даже самый сильный вирус."
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_tired.png",
+			"text": "Они оправдывают это тем, что мы опасны, разрушительны, жестоки, что наш выход в другие миры будет риском для всех..."
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_casual.png",
+			"text": "...Ничего."
+		},
+		{
+			"speaker": "???",
+			"portrait": "res://assets/sprites/dialogue_sprites/персонажи/dialogue_sprite_proud.png",
+			"text": "Мое создание приведет нас к тому, о чем мы мечтаем столько лет."
+		}
+	]
+}

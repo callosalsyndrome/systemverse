@@ -431,7 +431,7 @@ position = Vector2(1400, 305)
 [node name="InteractableObject2" parent="interactable_objects" instance=ExtResource("4_s7xss")]
 position = Vector2(303, 868)
 
-[node name="InteractableObject3" parent="interactable_objects" instance=ExtResource("4_s7xss")]
+[node name="InteractableObjectLift" parent="interactable_objects" instance=ExtResource("4_s7xss")]
 position = Vector2(698, 429)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -531,7 +531,7 @@ scale = Vector2(3.2031248, 3.2421877)
 texture = SubResource("GradientTexture2D_7mtat")
 
 [node name="Lift" parent="." instance=ExtResource("4_7mtat")]
-position = Vector2(680, 432)
+position = Vector2(687, 427)
 
 [node name="PointLight2D11" type="PointLight2D" parent="Lift"]
 position = Vector2(15.000002, 31)
@@ -539,7 +539,7 @@ scale = Vector2(3.2031248, 3.2421877)
 texture = SubResource("GradientTexture2D_7mtat")
 
 [node name="Lift2" parent="." instance=ExtResource("4_7mtat")]
-position = Vector2(877, 336)
+position = Vector2(884, 331)
 
 [node name="PointLight2D11" type="PointLight2D" parent="Lift2"]
 position = Vector2(15.000002, 31)
@@ -547,7 +547,7 @@ scale = Vector2(3.2031248, 3.2421877)
 texture = SubResource("GradientTexture2D_7mtat")
 
 [node name="Lift3" parent="." instance=ExtResource("4_7mtat")]
-position = Vector2(485, 527)
+position = Vector2(492, 522)
 
 [node name="PointLight2D11" type="PointLight2D" parent="Lift3"]
 position = Vector2(15.000002, 31)

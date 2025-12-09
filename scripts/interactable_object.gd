@@ -8,6 +8,8 @@ signal interaction_started(object)
 
 @onready var area_2d = $Area2D
 
+@export var dialog_id: String = ""
+
 func _ready():
 	$AnimatedSprite2D.play("glow")
 	$AnimatedSprite2D/ColorRect.hide()
@@ -17,7 +19,11 @@ func _ready():
 	
 func _input(event):
 	if is_player_in_zone() and event.is_action_pressed("interact"):
-		handle_interaction()
+		
+		if not DialogManager.is_dialog_active:
+			print("кнопка interact нажата")
+			handle_interaction()
+		#handle_interaction()
 	
 func handle_interaction():
 	#print("Взаимодействие ппппп с объектом:", name)
@@ -29,18 +35,25 @@ func perform_interaction(): #переопределяется для дочер�
 	#print("Взаимодействие с ", name)
 	interaction_triggered.emit()
 	print("Взаимодействие с ", name)
-	# Простая проверка: если это третий объект - это кнопка лифта
-	if name == "InteractableObject3":
-		print("Активация лифта!")
+	
+	if name == "InteractableObjectLift":
+		print("Активация лифта")
 		
-		# Ищем лифт в сцене
+		#ищем лифт в сцене
 		var lift = get_tree().get_first_node_in_group("lift")
 		if lift and lift.has_method("start_lift"):
 			lift.start_lift()
 		else:
 			print("Ошибка: лифт не найден!")
+	#else:
+		#interaction_triggered.emit()
+		
+	elif dialog_id != "":
+		print("Пытаемся запустить диалог: ", dialog_id)
+		DialogManager.start_dialog(dialog_id)
+		interaction_triggered.emit()
+	
 	else:
-		# Для других объектов - стандартное поведение
 		interaction_triggered.emit()
 #!!!!!!!!!!!!!!!!!!!!!!!!
 

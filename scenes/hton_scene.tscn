@@ -429,6 +429,7 @@ scale = Vector2(0.50314784, 0.50314784)
 
 [node name="InteractableObject" parent="." instance=ExtResource("7_uwihb")]
 position = Vector2(1402, -186)
+dialog_id = "panel"
 
 [node name="Lighting" type="Node2D" parent="."]
 
@@ -557,6 +558,7 @@ texture = ExtResource("3_ugr4p")
 
 [node name="InteractableObject2" parent="." instance=ExtResource("7_uwihb")]
 position = Vector2(1081, -3)
+dialog_id = "mask"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

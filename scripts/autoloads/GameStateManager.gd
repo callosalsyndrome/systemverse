@@ -16,6 +16,12 @@ func _ready():
 
 func save_game() -> void:
 	SaveLoadManager.save_game()
+
+var config
+var path_to_save_file := "user://gamesave.cfg"
+var section_game := "slot1"
+
+
 	
 func load_game(): 
 	SaveLoadManager.load_game()
