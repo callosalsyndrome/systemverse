@@ -401,11 +401,19 @@ z_index = 5
 position = Vector2(1400, -72)
 texture = ExtResource("2_uwihb")
 
+[node name="LabTileMap_desk_front" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(4, 0)
+tile_map_data = PackedByteArray("AAAQAA0AAgAOAAkAAAA=")
+tile_set = SubResource("TileSet_djwkl")
+
 [node name="LabTileMap_things" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAADABIAAQAEABAAAAAEABAAAQAEABAAAAAFAA4AAQAEABAAAAAAAAwAAQAEABAAAAABAAoAAQAEABAAAAACAAgAAQAEABAAAAAKACMAAQAeAB8AAAALACEAAQAeAB8AAAAMAB8AAQAeAB8AAAANACkAAQAeAB8AAAAOACcAAQAeAB8AAAAPACUAAQAeAB8AAAAKAP//AgAIAAkAAAAMAP7/AgARAAkAAAAQAA0AAgAOAAkAAAA=")
+tile_map_data = PackedByteArray("AAADABIAAQAEABAAAAAEABAAAQAEABAAAAAFAA4AAQAEABAAAAAAAAwAAQAEABAAAAABAAoAAQAEABAAAAACAAgAAQAEABAAAAAKACMAAQAeAB8AAAALACEAAQAeAB8AAAAMAB8AAQAeAB8AAAANACkAAQAeAB8AAAAOACcAAQAeAB8AAAAPACUAAQAeAB8AAAAKAP//AgAIAAkAAAAMAP7/AgARAAkAAAA=")
 tile_set = SubResource("TileSet_djwkl")
 
 [node name="LabTileMap_up" type="TileMapLayer" parent="."]
@@ -549,3 +557,11 @@ texture = ExtResource("3_ugr4p")
 
 [node name="InteractableObject2" parent="." instance=ExtResource("7_uwihb")]
 position = Vector2(1081, -3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(321, 432, 507, 339, 541, 335, 567, 322, 580, 307, 588, 282, 589, 261, 586, 229, 642, 144, 642, 61, 662, 41, 674, 16, 691, 24, 750, -7, 787, 9, 847, -23, 840, -44, 873, -51, 888, -154, 1058, -241, 1315, -241, 1568, -113, 1568, 29, 1219, 209, 1180, 189, 1114, 201, 1052, 233, 1044, 227, 1014, 208, 972, 199, 915, 209, 865, 254, 788, 371, 758, 379, 740, 393, 732, 411, 731, 430, 726, 439, 724, 454, 610, 512, 545, 544, 321, 432, 320, 432, 545, 547, 727, 458, 733, 432, 749, 390, 787, 375, 866, 257, 971, 206, 1051, 240, 1116, 206, 1177, 197, 1217, 213, 1571, 31, 1572, -116, 1314, -244, 1056, -244, 884, -156, 871, -54, 835, -47, 843, -26, 786, 6, 749, -10, 691, 21, 672, 12, 637, 63, 638, 143, 583, 228, 586, 273, 575, 307, 545, 329, 504, 336, 320, 432)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1069, -20, 1086, -2, 1111, 8, 1156, 10, 1201, -1, 1217, -18, 1269, -70, 1207, -111, 1168, -123, 1134, -125, 1087, -113, 1069, -94)

@@ -419,15 +419,6 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAATAAoAAQAAABAAAAAUAAwAAQAAABAAAAAVAA4AAQAAABAAAAAWABAAAQAAABAAAAA=")
 tile_set = SubResource("TileSet_0ftea")
 
-[node name="Lift" parent="." instance=ExtResource("4_7mtat")]
-z_index = 5
-position = Vector2(670, 373)
-
-[node name="PointLight2D11" type="PointLight2D" parent="Lift"]
-position = Vector2(15.000002, 31)
-scale = Vector2(3.2031248, 3.2421877)
-texture = SubResource("GradientTexture2D_7mtat")
-
 [node name="Player" parent="." instance=ExtResource("3_3bgeo")]
 position = Vector2(1205, 983)
 scale = Vector2(0.44766235, 0.4602257)
@@ -446,10 +437,7 @@ position = Vector2(698, 429)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(928, 992, 927, 992, 960, 1008, 929, 1024, 1056, 1088, 1088, 1072, 1120, 1088, 1407, 944, 1376, 928, 1408, 912, 1280, 848, 1248, 864, 1216, 848, 1152, 880, 960, 592, 1536, 304, 1244, 158, 1, 784, 288, 928, 832, 656, 1024, 943, 928, 992, 927, 992, 1022, 943, 832, 657, 288, 930, -2, 784, 1244, 156, 1537, 304, 961, 592, 1152, 879, 1216, 847, 1248, 863, 1280, 847, 1409, 912, 1377, 928, 1409, 944, 1120, 1089, 1088, 1073, 1056, 1089, 927, 1024, 959, 1008)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(1160, 204, 1168, 200, 1195, 209, 1186, 218)
+polygon = PackedVector2Array(928, 992, 927, 992, 960, 1008, 929, 1024, 1056, 1088, 1088, 1072, 1120, 1088, 1407, 944, 1376, 928, 1408, 912, 1280, 848, 1248, 864, 1216, 848, 1152, 880, 960, 592, 1429, 356, 1141, 210, 957, 302, 956, 326, 952, 328, 940, 328, 937, 326, 933.063, 314.3519, 918, 321, 919, 346, 920, 357, 911, 377, 865, 400, 822, 389, 817.4797, 372.61276, 771, 396, 770, 416, 767, 418, 755, 418, 752, 417, 750, 406, 720, 421, 723, 443, 723, 452, 715, 472, 668, 496, 625, 485, 617, 473, 583, 490, 583, 512, 579, 516, 570, 516, 564, 514, 556, 504, 529, 517, 530, 542, 521, 567, 473, 591, 430, 580, 419, 573, 396, 585, 396, 607, 395, 610, 379, 610, 374, 596, 88, 737, 375, 885, 832, 656, 1024, 943, 928, 992, 927, 992, 1022, 943, 832, 657, 378, 889, 83, 736, 1143, 207, 1433, 356, 961, 592, 1152, 879, 1216, 847, 1248, 863, 1280, 847, 1409, 912, 1377, 928, 1409, 944, 1120, 1089, 1088, 1073, 1056, 1089, 927, 1024, 959, 1008)
 
 [node name="Lighting" type="Node2D" parent="."]
 
@@ -542,9 +530,16 @@ position = Vector2(290, 857.99994)
 scale = Vector2(3.2031248, 3.2421877)
 texture = SubResource("GradientTexture2D_7mtat")
 
+[node name="Lift" parent="." instance=ExtResource("4_7mtat")]
+position = Vector2(680, 432)
+
+[node name="PointLight2D11" type="PointLight2D" parent="Lift"]
+position = Vector2(15.000002, 31)
+scale = Vector2(3.2031248, 3.2421877)
+texture = SubResource("GradientTexture2D_7mtat")
+
 [node name="Lift2" parent="." instance=ExtResource("4_7mtat")]
-z_index = 5
-position = Vector2(867, 277)
+position = Vector2(877, 336)
 
 [node name="PointLight2D11" type="PointLight2D" parent="Lift2"]
 position = Vector2(15.000002, 31)
@@ -552,8 +547,7 @@ scale = Vector2(3.2031248, 3.2421877)
 texture = SubResource("GradientTexture2D_7mtat")
 
 [node name="Lift3" parent="." instance=ExtResource("4_7mtat")]
-z_index = 5
-position = Vector2(475, 468)
+position = Vector2(485, 527)
 
 [node name="PointLight2D11" type="PointLight2D" parent="Lift3"]
 position = Vector2(15.000002, 31)
