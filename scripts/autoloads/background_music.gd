@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 
 var current_music: AudioStream = null
 var fade_duration: float = 1.0
-var default_music: AudioStream = preload("res://assets/sounds/【BOFU2017】 - homesick  RIN【BGA】.mp3")
+var default_music: AudioStream = preload("res://assets/sounds/Anthemics - Motion & Butterfly.mp3")
 var is_changing_scene: bool = false
 
 func _ready():
