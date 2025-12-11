@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://rn2jv5xlpawq"]
+[gd_scene load_steps=17 format=4 uid="uid://rn2jv5xlpawq"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_8urxs"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="1_y3dlq"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="3_3bgeo"]
 [ext_resource type="PackedScene" uid="uid://bk3npnff53c0r" path="res://scenes/lift.tscn" id="4_7mtat"]
 [ext_resource type="PackedScene" uid="uid://dwmecplqajte3" path="res://scenes/interactable_object.tscn" id="4_s7xss"]
+[ext_resource type="AudioStream" uid="uid://bia0lojuarrrl" path="res://assets/sounds/metal_steps.wav" id="5_3ek83"]
+[ext_resource type="AudioStream" uid="uid://624d3ko54vv" path="res://assets/sounds/Anthemics - Oasis.mp3" id="6_5hsao"]
 [ext_resource type="Texture2D" uid="uid://d20genwp6snqp" path="res://assets/sprites/lift_sprites/wires.png" id="7_1ycec"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mvhas"]
@@ -393,6 +395,7 @@ fill_to = Vector2(0.30530974, 0.07964602)
 
 [node name="LabLiftGameplayScene" type="Node2D"]
 script = ExtResource("1_8urxs")
+background_music = ExtResource("6_5hsao")
 
 [node name="LabTileMap_walls" type="TileMapLayer" parent="."]
 y_sort_enabled = true
@@ -422,6 +425,11 @@ tile_set = SubResource("TileSet_0ftea")
 [node name="Player" parent="." instance=ExtResource("3_3bgeo")]
 position = Vector2(1205, 983)
 scale = Vector2(0.44766235, 0.4602257)
+step_sound = ExtResource("5_3ek83")
+step_interval = 0.735
+run_step_interval = 0.56
+step_volume_db = 7.87
+run_volume_db = 8.59
 
 [node name="interactable_objects" type="Node2D" parent="."]
 

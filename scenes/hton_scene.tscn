@@ -1,10 +1,13 @@
-[gd_scene load_steps=17 format=4 uid="uid://bnaf1uek5adfk"]
+[gd_scene load_steps=20 format=4 uid="uid://bnaf1uek5adfk"]
 
+[ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_teefg"]
 [ext_resource type="Texture2D" uid="uid://cfxo3ddvy715a" path="res://assets/sprites/сцена хтони/glass.png" id="2_uwihb"]
 [ext_resource type="Texture2D" uid="uid://bfq8a60qseurg" path="res://assets/sprites/сцена хтони/hton.png" id="3_ugr4p"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="4_obiot"]
 [ext_resource type="Texture2D" uid="uid://h6kxmot0wwg7" path="res://assets/sprites/tiles/спрайты2.png" id="5_00dbh"]
+[ext_resource type="AudioStream" uid="uid://bia0lojuarrrl" path="res://assets/sounds/metal_steps.wav" id="5_kctja"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="6_kctja"]
+[ext_resource type="AudioStream" uid="uid://624d3ko54vv" path="res://assets/sounds/Anthemics - Oasis.mp3" id="6_teefg"]
 [ext_resource type="PackedScene" uid="uid://dwmecplqajte3" path="res://scenes/interactable_object.tscn" id="7_uwihb"]
 [ext_resource type="Texture2D" uid="uid://b1u67wfoq3lum" path="res://assets/sprites/aaaaaaaaaaaaa.png" id="8_ugr4p"]
 [ext_resource type="Texture2D" uid="uid://822lsu0fw5eu" path="res://assets/sprites/сцена хтони/screens.png" id="9_00dbh"]
@@ -394,6 +397,8 @@ fill_from = Vector2(0.5132743, 0.49557522)
 fill_to = Vector2(0.30530974, 0.07964602)
 
 [node name="HtonScene" type="Node2D"]
+script = ExtResource("1_teefg")
+background_music = ExtResource("6_teefg")
 
 [node name="Glass" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.34509805)
@@ -426,6 +431,11 @@ tile_set = SubResource("TileSet_djwkl")
 [node name="Player" parent="." instance=ExtResource("6_kctja")]
 position = Vector2(482.99997, 434.99997)
 scale = Vector2(0.50314784, 0.50314784)
+step_sound = ExtResource("5_kctja")
+step_interval = 0.735
+run_step_interval = 0.56
+step_volume_db = 7.87
+run_volume_db = 8.59
 
 [node name="InteractableObject" parent="." instance=ExtResource("7_uwihb")]
 position = Vector2(1402, -186)

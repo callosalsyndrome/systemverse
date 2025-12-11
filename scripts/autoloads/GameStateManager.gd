@@ -13,7 +13,6 @@ signal returning_to_main_menu()
 func _ready():
 	_connect_to_menu() 
 
-
 func save_game() -> void:
 	SaveLoadManager.save_game()
 
@@ -21,11 +20,8 @@ var config
 var path_to_save_file := "user://gamesave.cfg"
 var section_game := "slot1"
 
-
-	
 func load_game(): 
 	SaveLoadManager.load_game()
-
 
 func _creating_menu_scene():
 	#print("Создано меню")

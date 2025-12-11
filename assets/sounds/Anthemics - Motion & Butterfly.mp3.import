@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sx73mnp6tis0"
+path="res://.godot/imported/Anthemics - Motion & Butterfly.mp3-cbe90547c733cf7aad9a7610e1e6278e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Anthemics - Motion & Butterfly.mp3"
+dest_files=["res://.godot/imported/Anthemics - Motion & Butterfly.mp3-cbe90547c733cf7aad9a7610e1e6278e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
