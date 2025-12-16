@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cwum1jch0cjnj"]
+[gd_scene load_steps=17 format=4 uid="uid://cwum1jch0cjnj"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_mkkox"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="2_b2a1o"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://55aqf75ct3tg" path="res://assets/sprites/snow2.png" id="7_cd025"]
 [ext_resource type="AudioStream" uid="uid://clhht4spq28qr" path="res://assets/sounds/snow_steps.wav" id="7_n2udg"]
 [ext_resource type="Texture2D" uid="uid://clhguo3krvhg7" path="res://assets/sprites/snow1.png" id="7_uyhvn"]
+[ext_resource type="Texture2D" uid="uid://xc6r81hhyjl1" path="res://assets/sprites/как рулить.png" id="9_b8grr"]
 [ext_resource type="Texture2D" uid="uid://qcr5vy5m63vw" path="res://assets/sprites/snow3.png" id="9_n2udg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mvhas"]
@@ -141,6 +142,11 @@ position = Vector2(-532, 1009)
 scale = Vector2(0.4375, 0.4375)
 step_sound = ExtResource("7_n2udg")
 step_volume_db = -10.205
+
+[node name="КакРулить" type="Sprite2D" parent="Player"]
+position = Vector2(-4.5713806, 340.57135)
+scale = Vector2(0.68202794, 0.68202794)
+texture = ExtResource("9_b8grr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

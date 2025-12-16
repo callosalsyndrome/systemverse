@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmyw5rjhbfsn6"]
+[gd_scene load_steps=6 format=3 uid="uid://bmyw5rjhbfsn6"]
 
 [ext_resource type="Script" uid="uid://vhfrv52y875s" path="res://scripts/dialog_ui.gd" id="1_yjvli"]
+[ext_resource type="FontFile" uid="uid://w0ocqrpcf6fh" path="res://assets/fonts/CONSOLAB.TTF" id="2_edwrk"]
+[ext_resource type="FontFile" uid="uid://boygmrys02hkd" path="res://assets/fonts/CONSOLA.TTF" id="3_avaca"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8nsh5"]
+font = ExtResource("2_edwrk")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ys628"]
+font = ExtResource("3_avaca")
+font_size = 20
 
 [node name="DialogUI" type="CanvasLayer"]
 script = ExtResource("1_yjvli")
@@ -44,6 +53,7 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_vertical = 0
 text = "говорящий"
+label_settings = SubResource("LabelSettings_8nsh5")
 horizontal_alignment = 1
 
 [node name="DialogText" type="Label" parent="DialogContainer/TextContainer"]
@@ -51,4 +61,5 @@ custom_minimum_size = Vector2(700, 90)
 layout_mode = 2
 size_flags_vertical = 8
 text = "диалог"
+label_settings = SubResource("LabelSettings_ys628")
 autowrap_mode = 3

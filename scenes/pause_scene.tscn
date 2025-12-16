@@ -24,10 +24,10 @@ color = Color(0.0856, 0.081, 0.15, 0.43529412)
 
 [node name="resume_button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 258.0
-offset_top = 283.0
-offset_right = 434.0
-offset_bottom = 314.0
+offset_left = 310.0
+offset_top = 284.0
+offset_right = 486.0
+offset_bottom = 315.0
 scale = Vector2(0.7508859, 0.7508859)
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -35,10 +35,10 @@ text = "Возобновить игру"
 
 [node name="exit_to_menu_button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 259.0
-offset_top = 340.0
-offset_right = 435.0
-offset_bottom = 371.0
+offset_left = 311.0
+offset_top = 341.0
+offset_right = 487.0
+offset_bottom = 372.0
 scale = Vector2(0.7508859, 0.7508859)
 size_flags_horizontal = 3
 size_flags_vertical = 6

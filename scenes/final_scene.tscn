@@ -1,15 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct841pa1iwms6"]
+[gd_scene load_steps=9 format=3 uid="uid://ct841pa1iwms6"]
 
 [ext_resource type="Script" uid="uid://bcjd33bpnbv7j" path="res://scripts/final_scene.gd" id="1_qifxa"]
 [ext_resource type="Texture2D" uid="uid://bddbxtxagi1qy" path="res://assets/sprites/demo_ending.png" id="2_qifxa"]
+[ext_resource type="FontFile" uid="uid://w0ocqrpcf6fh" path="res://assets/fonts/CONSOLAB.TTF" id="3_egufw"]
+[ext_resource type="FontFile" uid="uid://boygmrys02hkd" path="res://assets/fonts/CONSOLA.TTF" id="4_r78si"]
+
+[sub_resource type="Gradient" id="Gradient_qifxa"]
+colors = PackedColorArray(1, 0, 0, 1, 0.38849992, 0.3643008, 0.609375, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b6q55"]
+gradient = SubResource("Gradient_qifxa")
+fill = 1
+fill_from = Vector2(0.508547, 0.48290598)
+fill_to = Vector2(0.82905984, 0.16239317)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qifxa"]
+font = ExtResource("3_egufw")
+font_size = 17
 font_color = Color(1, 0.81, 0.81, 1)
 outline_size = 5
 outline_color = Color(0.71, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_b6q55"]
-font_size = 9
+font = ExtResource("4_r78si")
+font_size = 10
 font_color = Color(0.84, 0.46199998, 0.46199998, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
@@ -33,6 +47,11 @@ scale = Vector2(2.3566337, 2.3566337)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(243.56776, 104.386185)
+scale = Vector2(5.5030828, 1.9719089)
+texture = SubResource("GradientTexture2D_b6q55")
+
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 7
@@ -40,8 +59,8 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -31.027008
-offset_top = -36.49266
+offset_left = -31.027039
+offset_top = -36.492676
 offset_right = 107.97298
 offset_bottom = -5.492676
 grow_horizontal = 2
@@ -51,15 +70,15 @@ text = "В главное меню"
 
 [node name="DemoEnding" type="Sprite2D" parent="Panel"]
 position = Vector2(246.9624, 107.41127)
-scale = Vector2(0.3170311, 0.31703112)
+scale = Vector2(0.31703106, 0.31703112)
 texture = ExtResource("2_qifxa")
 
 [node name="big_text" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 78.07747
-offset_top = 185.0644
+offset_left = 78.07746
+offset_top = 185.06439
 offset_right = 501.0775
-offset_bottom = 210.10011
+offset_bottom = 210.1001
 scale = Vector2(0.79678357, 0.79678357)
 text = "Спасибо за прохождение демо-версии нашей игры!"
 label_settings = SubResource("LabelSettings_qifxa")
@@ -68,7 +87,7 @@ text_direction = 1
 
 [node name="big_text2" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 78.07747
+offset_left = 78.07746
 offset_top = 210.52444
 offset_right = 501.0775
 offset_bottom = 235.56015

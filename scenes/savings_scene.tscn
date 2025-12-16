@@ -16,18 +16,21 @@ offset_left = 136.0
 offset_top = 105.0
 offset_right = 411.0
 offset_bottom = 536.0
+slot_number = 1
 
 [node name="SaveSlot2" parent="." instance=ExtResource("2_qp2g0")]
 offset_left = 456.0
 offset_top = 104.0
 offset_right = 731.0
 offset_bottom = 535.0
+slot_number = 2
 
 [node name="SaveSlot3" parent="." instance=ExtResource("2_qp2g0")]
 offset_left = 779.0
 offset_top = 106.0
 offset_right = 1054.0
 offset_bottom = 537.0
+slot_number = 3
 
 [node name="deleting_confirm" type="Node2D" parent="."]
 visible = false
