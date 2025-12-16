@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7sd3qxhn3igk"]
+[gd_scene load_steps=5 format=3 uid="uid://ct841pa1iwms6"]
 
-[ext_resource type="Texture2D" uid="uid://dku47c8javr40" path="res://assets/sprites/new character sprites/right.png" id="1_4bkdv"]
-[ext_resource type="Script" uid="uid://cuxxxrw8seju" path="res://scripts/final_scene.gd" id="1_qifxa"]
+[ext_resource type="Script" uid="uid://bcjd33bpnbv7j" path="res://scripts/final_scene.gd" id="1_qifxa"]
+[ext_resource type="Texture2D" uid="uid://bddbxtxagi1qy" path="res://assets/sprites/demo_ending.png" id="2_qifxa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qifxa"]
+font_color = Color(1, 0.81, 0.81, 1)
+outline_size = 5
+outline_color = Color(0.71, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b6q55"]
+font_size = 9
+font_color = Color(0.84, 0.46199998, 0.46199998, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Final" type="CanvasLayer"]
 script = ExtResource("1_qifxa")
@@ -12,25 +23,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -248.28607
-offset_top = -120.5
-offset_right = 248.28607
-offset_bottom = 120.5
+offset_left = -582.0
+offset_top = -330.0
+offset_right = -85.42789
+offset_bottom = -49.515198
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2.3566337, 2.3566337)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -221.5
-offset_right = 221.5
-offset_bottom = 157.0
-grow_horizontal = 2
-texture = ExtResource("1_4bkdv")
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1
@@ -39,10 +40,40 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -69.5
-offset_top = -48.0
-offset_right = 69.5
-offset_bottom = -17.0
+offset_left = -31.027008
+offset_top = -36.49266
+offset_right = 107.97298
+offset_bottom = -5.492676
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.5325224, 0.5325224)
 text = "В главное меню"
+
+[node name="DemoEnding" type="Sprite2D" parent="Panel"]
+position = Vector2(246.9624, 107.41127)
+scale = Vector2(0.3170311, 0.31703112)
+texture = ExtResource("2_qifxa")
+
+[node name="big_text" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 78.07747
+offset_top = 185.0644
+offset_right = 501.0775
+offset_bottom = 210.10011
+scale = Vector2(0.79678357, 0.79678357)
+text = "Спасибо за прохождение демо-версии нашей игры!"
+label_settings = SubResource("LabelSettings_qifxa")
+horizontal_alignment = 1
+text_direction = 1
+
+[node name="big_text2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 78.07747
+offset_top = 210.52444
+offset_right = 501.0775
+offset_bottom = 235.56015
+scale = Vector2(0.79678357, 0.79678357)
+text = "Ожидайте выхода новых глав, в них появятся новые персонажи и механики :з"
+label_settings = SubResource("LabelSettings_b6q55")
+horizontal_alignment = 1
+text_direction = 1
