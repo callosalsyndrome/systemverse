@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0wkaa2cvy6ww"
-path="res://.godot/imported/diagonal down.png-f99002d7289d06f912c9f0b41955ff4a.ctex"
+uid="uid://b1u67wfoq3lum"
+path="res://.godot/imported/aaaaaaaaaaaaa.png-12740f97d33a5bbb2e91206ddf89a5b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/diagonal down.png"
-dest_files=["res://.godot/imported/diagonal down.png-f99002d7289d06f912c9f0b41955ff4a.ctex"]
+source_file="res://assets/sprites/сцена хтони/aaaaaaaaaaaaa.png"
+dest_files=["res://.godot/imported/aaaaaaaaaaaaa.png-12740f97d33a5bbb2e91206ddf89a5b2.ctex"]
 
 [params]
 
