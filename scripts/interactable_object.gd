@@ -6,6 +6,10 @@ signal player_exited_interaction_zone(object_name)
 signal interaction_triggered(object)
 signal interaction_started(object)
 
+@export var is_gameplay_trigger: bool = false
+@export var is_final_trigger: bool = false
+var camera_already_triggered = false
+
 @onready var area_2d = $Area2D
 
 @export var dialog_id: String = ""
@@ -52,14 +56,31 @@ func perform_interaction(): #переопределяется для дочер�
 		print("Пытаемся запустить диалог: ", dialog_id)
 		DialogManager.start_dialog(dialog_id)
 		interaction_triggered.emit()
-	
-	else:
-		interaction_triggered.emit()
+		
+		if is_final_trigger:
+			while DialogManager.is_dialog_active:
+				await get_tree().create_timer(0.1).timeout
+			
+			var hton_scene = null
+			
+			for node in get_tree().current_scene.get_children():
+				if node.name == "HtonScene" or node.name == "hton_scene":
+					hton_scene = node
+					break
+			
+			if hton_scene:
+				var player = hton_scene.get_node("Player")
+				if player:
+					var camera = player.get_node("Camera2D")
+					if camera:
+						camera.do_camera_zoom(true)
+	#else:
+		#interaction_triggered.emit()
 #!!!!!!!!!!!!!!!!!!!!!!!!
 
 func _on_body_entered(body: Node):
 	# Проверяем, что вошел игрок (по имени или группе)
-	if body.is_in_group("player") or body.name == "Player":
+	if body.name == "Player":
 		#print("Игрок вошел цццв зону взаимодействия: ", name)
 		
 		# Отправляем сигнал в GameStateManager
@@ -70,10 +91,18 @@ func _on_body_entered(body: Node):
 			GameStateManager.emit_signal("player_entered_interaction_zone", name)
 		$AnimatedSprite2D/ColorRect.show()
 		
+		
+		if is_gameplay_trigger and not camera_already_triggered:
+			camera_already_triggered = true
+			await get_tree().create_timer(0.5).timeout
+			
+			var camera = body.get_node("Camera2D")
+			if camera:
+				camera.do_camera_zoom(false)
 
 func _on_body_exited(body: Node):
 	# Проверяем, что вышел игрок
-	if body.is_in_group("player") or body.name == "Player":
+	if body.name == "Player":
 		#print("Игрокввв вышел из зоны взаимодействия: ", name)
 		
 	# Отправляем сигнал в GameStateManager
@@ -89,7 +118,7 @@ func _on_body_exited(body: Node):
 func is_player_in_zone() -> bool:
 	var bodies = area_2d.get_overlapping_bodies()
 	for body in bodies:
-		if body.is_in_group("player") or body.name == "Player":
+		if body.name == "Player":
 			return true
 	return false
 

@@ -130,6 +130,7 @@ offset_bottom = 1795.0
 [node name="InteractableObject" parent="." instance=ExtResource("4_mvhas")]
 position = Vector2(716, 368)
 script = ExtResource("4_27dq3")
+is_gameplay_trigger = true
 
 [node name="Player" parent="." instance=ExtResource("2_b2a1o")]
 z_index = 2
@@ -145,7 +146,7 @@ polygon = PackedVector2Array(632, 292, 540, 335, 571, 348, 380, 439, 343, 424, 1
 follow_viewport_enabled = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("7_uyhvn")
 lifetime = 6.0
@@ -159,7 +160,7 @@ initial_velocity_max = 25.0
 color = Color(0.558134, 0.995251, 1, 1)
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(78, 4)
+position = Vector2(81, -136)
 amount = 35
 texture = ExtResource("7_cd025")
 lifetime = 6.0
@@ -173,7 +174,7 @@ initial_velocity_max = 25.0
 color = Color(0.49411, 0.735041, 0.999999, 1)
 
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("9_n2udg")
 lifetime = 6.0
@@ -187,7 +188,7 @@ initial_velocity_max = 25.0
 color = Color(0.494118, 0.733333, 1, 1)
 
 [node name="CPUParticles2D4" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("7_uyhvn")
 lifetime = 6.0
@@ -201,7 +202,7 @@ initial_velocity_max = 25.0
 color = Color(0.558134, 0.995251, 1, 1)
 
 [node name="CPUParticles2D5" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(78, 4)
+position = Vector2(81, -136)
 amount = 35
 texture = ExtResource("7_cd025")
 lifetime = 6.0
@@ -215,7 +216,7 @@ initial_velocity_max = 25.0
 color = Color(0.49411, 0.735041, 0.999999, 1)
 
 [node name="CPUParticles2D6" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("7_uyhvn")
 lifetime = 6.0
@@ -229,7 +230,7 @@ initial_velocity_max = 25.0
 color = Color(0.558134, 0.995251, 1, 1)
 
 [node name="CPUParticles2D7" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("7_uyhvn")
 lifetime = 6.0
@@ -243,7 +244,7 @@ initial_velocity_max = 25.0
 color = Color(0.558134, 0.995251, 1, 1)
 
 [node name="CPUParticles2D8" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("7_uyhvn")
 lifetime = 6.0
@@ -257,7 +258,7 @@ initial_velocity_max = 25.0
 color = Color(0.558134, 0.995251, 1, 1)
 
 [node name="CPUParticles2D9" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("7_uyhvn")
 lifetime = 6.0
@@ -271,7 +272,7 @@ initial_velocity_max = 25.0
 color = Color(0.558134, 0.995251, 1, 1)
 
 [node name="CPUParticles2D10" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("7_uyhvn")
 lifetime = 6.0
@@ -285,7 +286,7 @@ initial_velocity_max = 25.0
 color = Color(0.558134, 0.995251, 1, 1)
 
 [node name="CPUParticles2D11" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2(84, 3)
+position = Vector2(87, -137)
 amount = 35
 texture = ExtResource("7_uyhvn")
 lifetime = 6.0
