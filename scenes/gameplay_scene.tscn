@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://cwum1jch0cjnj"]
+[gd_scene load_steps=16 format=4 uid="uid://cwum1jch0cjnj"]
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_mkkox"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="2_b2a1o"]
+[ext_resource type="AudioStream" uid="uid://cohfhcyrrkki7" path="res://assets/sounds/Cora Zea - Marshes of Harmony.mp3" id="2_hvrxh"]
 [ext_resource type="Texture2D" uid="uid://batvc1cehe622" path="res://assets/sprites/tiles/спрайты3_здание.png" id="3_1126i"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="3_xpbwm"]
 [ext_resource type="Script" uid="uid://bmhjg70xrump5" path="res://scenes/interactable_object_CHANGESCENE.gd" id="4_27dq3"]
 [ext_resource type="PackedScene" uid="uid://dwmecplqajte3" path="res://scenes/interactable_object.tscn" id="4_mvhas"]
 [ext_resource type="Texture2D" uid="uid://55aqf75ct3tg" path="res://assets/sprites/snow2.png" id="7_cd025"]
+[ext_resource type="AudioStream" uid="uid://clhht4spq28qr" path="res://assets/sounds/snow_steps.wav" id="7_n2udg"]
 [ext_resource type="Texture2D" uid="uid://clhguo3krvhg7" path="res://assets/sprites/snow1.png" id="7_uyhvn"]
 [ext_resource type="Texture2D" uid="uid://qcr5vy5m63vw" path="res://assets/sprites/snow3.png" id="9_n2udg"]
 
@@ -105,6 +107,7 @@ sources/1 = SubResource("TileSetAtlasSource_cd025")
 
 [node name="GameplayScene" type="Node2D"]
 script = ExtResource("1_mkkox")
+background_music = ExtResource("2_hvrxh")
 
 [node name="SnowTileMap" type="TileMapLayer" parent="."]
 self_modulate = Color(1.17984, 1.17984, 1.17984, 1)
@@ -136,6 +139,8 @@ is_gameplay_trigger = true
 z_index = 2
 position = Vector2(-532, 1009)
 scale = Vector2(0.4375, 0.4375)
+step_sound = ExtResource("7_n2udg")
+step_volume_db = -10.205
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

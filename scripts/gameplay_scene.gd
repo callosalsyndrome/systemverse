@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var background_music: AudioStream
+
 signal game_started()
 signal world_changed(world_name)
 
@@ -7,9 +9,14 @@ func _ready():
 	print("GP: Я - ", name)
 	add_to_group("player_ready_listeners")
 	_on_game_started()
+	if background_music:
+		print("GP: Отправляю музыку в BackgroundMusic")
 	
 func _on_game_started():
 	game_started.emit()
+
+func get_background_music() -> AudioStream:
+	return background_music
 
 var entered = false #Находимся ли мы в зоне
 

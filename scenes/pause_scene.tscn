@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://h5t5m8jr3i0m"]
+[gd_scene load_steps=3 format=3 uid="uid://h5t5m8jr3i0m"]
 
 [ext_resource type="Script" uid="uid://dbxkrnoyyk1ed" path="res://scripts/pause_scene.gd" id="1_mfaka"]
+[ext_resource type="Texture2D" uid="uid://b0by3543l6hln" path="res://assets/sprites/пауза.png" id="2_8w2mf"]
 
 [node name="PauseScene" type="CanvasLayer"]
 layer = 10
@@ -19,27 +20,35 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 650.0
-color = Color(0.08235294, 0.078431375, 0.14509805, 0.22745098)
+color = Color(0.0856, 0.081, 0.15, 0.43529412)
 
 [node name="resume_button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 273.0
-offset_right = 304.0
-offset_bottom = 304.0
+offset_left = 258.0
+offset_top = 283.0
+offset_right = 434.0
+offset_bottom = 314.0
+scale = Vector2(0.7508859, 0.7508859)
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Возобновить игру"
 
 [node name="exit_to_menu_button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 129.0
-offset_top = 330.0
-offset_right = 305.0
-offset_bottom = 361.0
+offset_left = 259.0
+offset_top = 340.0
+offset_right = 435.0
+offset_bottom = 371.0
+scale = Vector2(0.7508859, 0.7508859)
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Вернуться в меню"
+
+[node name="Пауза" type="Sprite2D" parent="Control"]
+z_index = 10
+position = Vector2(574, 356)
+scale = Vector2(0.43040398, 0.43040398)
+texture = ExtResource("2_8w2mf")
 
 [connection signal="pressed" from="Control/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Control/exit_to_menu_button" to="." method="_on_exit_to_menu_button_pressed"]
