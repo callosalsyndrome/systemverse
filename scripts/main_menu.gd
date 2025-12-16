@@ -12,10 +12,7 @@ func _ready():
 	ExitButton.pressed.connect(_on_exit_button_pressed)
 
 func _on_start_button_pressed() -> void:
-	#var connections = get_signal_connection_list("start_button_pressed")
-	#print("Всего подключений к сигналу 'pressed': ", connections.size())
-	#for connection in connections:
-		#print("Подключение: ", connection)
+	
 	start_button_pressed.emit()
 
 func _on_exit_button_pressed() -> void:

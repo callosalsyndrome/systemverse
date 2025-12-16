@@ -11,22 +11,7 @@ func _ready() -> void:
 	print("CS: Я - ", name)
 	add_to_group("player_ready_listeners")
 	current_world.connect("world_changed", handle_world_changed)
-	#match SaveLoadManager.current_scene_name:
-		#"lab_gameplay_scene":
-			#next_world = load("res://scenes/" + SaveLoadManager.current_scene_name + ".tscn").instantiate()
-			#next_world.z_index = -10
-			#await animation_player.animation_finished
-			#add_child(next_world) 
-			#next_world.connect("world_changed", handle_world_changed)
-			#current_world.queue_free()
-			#current_world = next_world
-			#current_world.z_index = 0
-		#"lab_lift_gameplay_scene":
-			#last_world_name = "lab_gameplay_scene"
-		#"hton_scene":
-			#last_world_name = "lab_lift_gameplay_scene"
-		#_:
-			#return
+	
 	if SaveLoadManager.flag == false:
 		next_world = load("res://scenes/" + SaveLoadManager.current_scene_name + ".tscn").instantiate()
 		next_world.z_index = -10
@@ -49,8 +34,7 @@ func _ready() -> void:
 		else: 
 			print("не установилсся player")
 		
-	#var player = get_tree().get_first_node_in_group("player")
-	#player.position = SaveLoadManager.position
+	
 
 func _on_player_ready(player: Node):
 	if SaveLoadManager.position != null:
@@ -88,10 +72,7 @@ func handle_world_changed(current_world_name: String):
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
 		"fade_in":
-			#current_world.queue_free()
-			#current_world = next_world
-			#current_world.z_index = 0
-			#next_world = null
+		
 			animation_player.play("fade_out")
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
@@ -104,12 +85,4 @@ func _on_animation_player_animation_started(anim_name: StringName) -> void:
 			SaveLoadManager.current_scene_name = next_world_name
 			var player = get_tree().get_first_node_in_group("player")
 			SaveLoadManager.flag = true
-			#if SaveLoadManager.position != null:
-				#player.position = SaveLoadManager.position
-			#if next_world_name != SaveLoadManager.current_scene_name:
-				#SaveLoadManager.position = player.position
-				#print("Позиция Г игрока сохранена: ", player.position)
-			#else:
-				#print("Player не найден")	
-			#SaveLoadManager.save_game()
-			#next_world = null
+			

@@ -31,10 +31,7 @@ func load_game() -> void:
 	print("Игра загружена!")
 
 func delete_section() -> void: 
-	#var config2 = ConfigFile.new()
-	#config2.load(path_to_save_file)
-	#config2.erase_section(section_name)
-	#config2.save(path_to_save_file)
+	
 	var config2 = ConfigFile.new()
 	# Проверяем, существует ли файл
 	if not FileAccess.file_exists(path_to_save_file):

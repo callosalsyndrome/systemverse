@@ -7,7 +7,7 @@ signal resume_button_pressed
 signal exit_to_menu_button_pressed
 
 func _ready():
-	#print("PS: Я - ", name)
+	
 	
 	var control_node = $Control
 	var camera = get_viewport().get_camera_2d()

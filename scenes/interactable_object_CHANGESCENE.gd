@@ -8,5 +8,3 @@ func handle_interaction():
 func perform_interaction(): #переопределяется для дочерних классов
 	#print("Взаимодействие с ", name)
 	interaction_triggered.emit()
-
-# оно вообще не запускается лол. 

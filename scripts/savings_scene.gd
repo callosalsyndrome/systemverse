@@ -8,9 +8,6 @@ signal first_slot_selected()
 signal second_slot_selected()
 signal third_slot_selected()
 
-#signal delete_first_slot_selected()
-#signal delete_second_slot_selected()
-#signal delete_third_slot_selected()
 
 func _ready():
 	print("SVS: Я - ", name)
