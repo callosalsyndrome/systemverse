@@ -9,6 +9,7 @@ signal interaction_started(object)
 @export var is_gameplay_trigger: bool = false
 @export var is_final_trigger: bool = false
 var camera_already_triggered = false
+var panel_already_activated
 
 @onready var area_2d = $Area2D
 
@@ -53,9 +54,17 @@ func perform_interaction(): #переопределяется для дочер�
 		#interaction_triggered.emit()
 		
 	elif dialog_id != "":
+		if dialog_id == "panel" and panel_already_activated:
+			print("Панель уже была активирована, пропускаем")
+			return
+		
 		print("Пытаемся запустить диалог: ", dialog_id)
 		DialogManager.start_dialog(dialog_id)
 		interaction_triggered.emit()
+		
+		if dialog_id == "panel":
+			panel_already_activated = true
+			print("Панель помечена как активированная")
 		
 		if is_final_trigger:
 			while DialogManager.is_dialog_active:
