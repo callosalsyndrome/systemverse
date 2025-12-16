@@ -429,6 +429,7 @@ scale = Vector2(0.50314784, 0.50314784)
 
 [node name="InteractableObject" parent="." instance=ExtResource("7_uwihb")]
 position = Vector2(1402, -186)
+is_final_trigger = true
 dialog_id = "panel"
 
 [node name="Lighting" type="Node2D" parent="."]
