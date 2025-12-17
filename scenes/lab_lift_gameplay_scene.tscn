@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bk3npnff53c0r" path="res://scenes/lift.tscn" id="4_7mtat"]
 [ext_resource type="PackedScene" uid="uid://dwmecplqajte3" path="res://scenes/interactable_object.tscn" id="4_s7xss"]
 [ext_resource type="AudioStream" uid="uid://bia0lojuarrrl" path="res://assets/sounds/metal_steps.wav" id="5_3ek83"]
-[ext_resource type="AudioStream" uid="uid://624d3ko54vv" path="res://assets/sounds/Anthemics - Oasis.mp3" id="6_5hsao"]
+[ext_resource type="AudioStream" uid="uid://624d3ko54vv" path="res://assets/sounds/music/Anthemics - Oasis.mp3" id="6_5hsao"]
 [ext_resource type="Texture2D" uid="uid://d20genwp6snqp" path="res://assets/sprites/lift_sprites/wires.png" id="7_1ycec"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mvhas"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv1o3qvjiwcfl" path="res://scripts/gameplay_scene.gd" id="1_mkkox"]
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="2_b2a1o"]
-[ext_resource type="AudioStream" uid="uid://cohfhcyrrkki7" path="res://assets/sounds/Cora Zea - Marshes of Harmony.mp3" id="2_hvrxh"]
+[ext_resource type="AudioStream" uid="uid://cohfhcyrrkki7" path="res://assets/sounds/music/Cora Zea - Marshes of Harmony.mp3" id="2_hvrxh"]
 [ext_resource type="Texture2D" uid="uid://batvc1cehe622" path="res://assets/sprites/tiles/спрайты3_здание.png" id="3_1126i"]
 [ext_resource type="Texture2D" uid="uid://x6lj8g0wptui" path="res://assets/sprites/tiles/спрайты1.png" id="3_xpbwm"]
 [ext_resource type="Script" uid="uid://bmhjg70xrump5" path="res://scripts/interactable_object_CHANGESCENE.gd" id="4_27dq3"]

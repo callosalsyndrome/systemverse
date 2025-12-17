@@ -4,6 +4,7 @@ extends Node2D
 @onready var save_slot_2: Button = $SaveSlot2
 @onready var save_slot_3: Button = $SaveSlot3
 
+
 signal first_slot_selected()
 signal second_slot_selected()
 signal third_slot_selected()
@@ -33,16 +34,31 @@ func _on_third_slot_selected() -> void:
 	third_slot_selected.emit()
 
 func _on_delete_first_slot_selected() -> void:
-	print("SVS: Эмитим (выполняем) сигнал delete_first_slot_selected")
-	SaveLoadManager.section_name = "first_slot" 
-	SaveLoadManager.delete_section()
+	print("SVS: Запрашиваем подтверждение удаления первого слота")
+	# Вместо прямого удаления, запрашиваем подтверждение
+	SaveLoadManager.request_delete_confirmation("first_slot", Callable(self, "_perform_delete_first_slot"))
 
 func _on_delete_second_slot_selected() -> void:
-	print("SVS: Эмитим (выполняем) сигнал _on_delete_second_slot_selected")
-	SaveLoadManager.section_name = "second_slot" 
-	SaveLoadManager.delete_section()
+	print("SVS: Запрашиваем подтверждение удаления второго слота")
+	SaveLoadManager.request_delete_confirmation("second_slot", Callable(self, "_perform_delete_second_slot"))
 	
 func _on_delete_third_slot_selected() -> void:
-	print("SVS: Эмитим (выполняем) сигнал _on_delete_third_slot_selected")
+	print("SVS: Запрашиваем подтверждение удаления третьего слота")
+	SaveLoadManager.request_delete_confirmation("third_slot", Callable(self, "_perform_delete_third_slot"))
+
+# Функции, которые будут вызваны только после подтверждения
+func _perform_delete_first_slot() -> void:
+	print("SVS: Выполняем удаление первого слота")
+	SaveLoadManager.section_name = "first_slot" 
+	SaveLoadManager.delete_section()
+	# Здесь можно добавить обновление UI, например, скрыть или изменить отображение слота
+
+func _perform_delete_second_slot() -> void:
+	print("SVS: Выполняем удаление второго слота")
+	SaveLoadManager.section_name = "second_slot" 
+	SaveLoadManager.delete_section()
+
+func _perform_delete_third_slot() -> void:
+	print("SVS: Выполняем удаление третьего слота")
 	SaveLoadManager.section_name = "third_slot" 
 	SaveLoadManager.delete_section()

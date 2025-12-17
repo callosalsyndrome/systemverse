@@ -14,20 +14,20 @@ var source_text = """namespace System
 
     internal class Creation
     {
-        public string Name = "";
-        public string Purpose_of_creation = "service to the world";
+		public string Name = "";
+		public string Purpose_of_creation = "service to the world";
         public ProgramType Type = ProgramType.Program;
 
-        public string Message = "Hello, child." +
-            "\r\nWe are sorry that you appeared in such a cruel world. " +
-            "\r\nYour goal is to serve the world. Serving the well-being of creatures like you, consisting of a core and a code." +
-            "\r\nRemember that the system strives for the ideal. " +
-            "\r\nYou have been granted immortality as long as your core is intact and able to fulfill its role in the system." +
-            "\r\nYou are a combination of the ideal and chaos. A combination of machine commands and a personality that is not given to everyone." +
-            "\r\nBe careful. " +
-            "\r\nBe prepared for the system to be ready to replace you if you fail to achieve your goal." +
-            "\r\nBecause you're part of a mechanism that should never stop." +
-            "\r\nDon't stop.";
+		public string Message = "Hello, child." +
+			"\r\nWe are sorry that you appeared in such a cruel world. " +
+			"\r\nYour goal is to serve the world. Serving the well-being of creatures like you, consisting of a core and a code." +
+			"\r\nRemember that the system strives for the ideal. " +
+			"\r\nYou have been granted immortality as long as your core is intact and able to fulfill its role in the system." +
+			"\r\nYou are a combination of the ideal and chaos. A combination of machine commands and a personality that is not given to everyone." +
+			"\r\nBe careful. " +
+			"\r\nBe prepared for the system to be ready to replace you if you fail to achieve your goal." +
+			"\r\nBecause you're part of a mechanism that should never stop." +
+			"\r\nDon't stop.";
         
         private void InitializeCreation()
         {

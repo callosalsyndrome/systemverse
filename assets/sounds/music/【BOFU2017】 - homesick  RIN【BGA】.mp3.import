@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvgo3xemk8kos"
+path="res://.godot/imported/【BOFU2017】 - homesick  RIN【BGA】.mp3-7b7cb9ae8fa69795573c77115096ace8.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music/【BOFU2017】 - homesick  RIN【BGA】.mp3"
+dest_files=["res://.godot/imported/【BOFU2017】 - homesick  RIN【BGA】.mp3-7b7cb9ae8fa69795573c77115096ace8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

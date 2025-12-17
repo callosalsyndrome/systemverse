@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mm8et44om561" path="res://scenes/player.tscn" id="3_yroxo"]
 [ext_resource type="PackedScene" uid="uid://dwmecplqajte3" path="res://scenes/interactable_object.tscn" id="4_0ftea"]
 [ext_resource type="AudioStream" uid="uid://bia0lojuarrrl" path="res://assets/sounds/metal_steps.wav" id="5_e1pxt"]
-[ext_resource type="AudioStream" uid="uid://624d3ko54vv" path="res://assets/sounds/Anthemics - Oasis.mp3" id="7_3h1fl"]
+[ext_resource type="AudioStream" uid="uid://624d3ko54vv" path="res://assets/sounds/music/Anthemics - Oasis.mp3" id="7_3h1fl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mvhas"]
 vertices = PackedVector2Array(32, 0, 0, 16, -32, 0, 0, -16)

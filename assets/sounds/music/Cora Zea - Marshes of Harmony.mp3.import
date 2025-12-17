@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cohfhcyrrkki7"
+path="res://.godot/imported/Cora Zea - Marshes of Harmony.mp3-a2877995c9d749574aa633cbc46c7284.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music/Cora Zea - Marshes of Harmony.mp3"
+dest_files=["res://.godot/imported/Cora Zea - Marshes of Harmony.mp3-a2877995c9d749574aa633cbc46c7284.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

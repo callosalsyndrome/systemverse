@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://624d3ko54vv"
+path="res://.godot/imported/Anthemics - Oasis.mp3-37e58619ac8e46fcfad4c3c1920264d1.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music/Anthemics - Oasis.mp3"
+dest_files=["res://.godot/imported/Anthemics - Oasis.mp3-37e58619ac8e46fcfad4c3c1920264d1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
