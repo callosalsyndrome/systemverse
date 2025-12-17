@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd0fdkfb25rtn"]
+[gd_scene load_steps=8 format=3 uid="uid://bd0fdkfb25rtn"]
 
 [ext_resource type="Script" uid="uid://cs7okxk8xw8bu" path="res://scripts/save_slot.gd" id="1_5xvxf"]
+[ext_resource type="FontFile" uid="uid://boygmrys02hkd" path="res://assets/fonts/CONSOLA.TTF" id="2_2uv05"]
 [ext_resource type="Texture2D" uid="uid://brnnlx2gh5vtf" path="res://assets/sprites/new character sprites/down.png" id="2_332xg"]
 [ext_resource type="Texture2D" uid="uid://b3kx0lq0cmks" path="res://assets/sprites/save_slot.png" id="3_332xg"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_2uv05"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_32et5"]
+font = ExtResource("2_2uv05")
+font_size = 19
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+shadow_size = 0
+shadow_color = Color(0.62, 0, 0.031000119, 0.5764706)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_332xg"]
 
@@ -20,12 +29,13 @@ script = ExtResource("1_5xvxf")
 [node name="slot_number_label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 55.0
+offset_left = 44.0
 offset_top = 329.0
-offset_right = 223.0
+offset_right = 233.0
 offset_bottom = 352.0
 theme_override_colors/font_color = Color(0.66, 0, 0, 1)
 text = "Слот сохранения №1"
+label_settings = SubResource("LabelSettings_32et5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
